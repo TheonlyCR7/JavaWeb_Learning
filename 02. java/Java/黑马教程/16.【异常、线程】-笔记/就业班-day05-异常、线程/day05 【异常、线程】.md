@@ -461,6 +461,8 @@ public class Demo {
 
 #  第四章 多线程
 
+>   好处：各个线程之间互不影响
+
 我们在之前，学习的程序在没有跳转语句的前提下，都是由上至下依次执行，那现在想要设计一个程序，边打游戏边听歌，怎么设计？
 
 要解决上述问题,咱们得使用多进程或者多线程来解决.
@@ -514,7 +516,7 @@ public class Demo {
     大部分操作系统都支持多进程并发运行，现在的操作系统几乎都支持同时运行多个程序。比如：现在我们上课一边使用编辑器，一边使用录屏软件，同时还开着画图板，dos窗口等软件。此时，这些程序是在同时运行，”感觉这些软件好像在同一时刻运行着“。
 
     实际上，CPU(中央处理器)使用抢占式调度模式在多个线程间进行着高速的切换。对于CPU的一个核而言，某个时刻，只能执行一个线程，而 CPU的在多个线程间切换速度相对我们的感觉要快，看上去就是在同一时刻运行。
-    其实，多线程程序并不能提高程序的运行速度，但能够提高程序运行效率，让CPU的使用率更高。
+    其实，**多线程程序并不能提高程序的运行速度，但能够提高程序运行效率，让CPU的使用率更高**。
 
     ![抢占式调度](img/抢占式调度.bmp)
 
@@ -547,7 +549,10 @@ public class Demo01 {
 
 自定义线程类：
 
+MyThread.java
+
 ~~~java
+// 继承Thread
 public class MyThread extends Thread {
 	//定义指定线程名称的构造方法
 	public MyThread(String name) {
@@ -565,3 +570,24 @@ public class MyThread extends Thread {
 	}
 }
 ~~~
+
+Main.java
+
+```java
+// 一次启动一个线程永远是不合法的  线程一旦完成执行就不会重新启动
+public class Main{
+	public static void main(String[] args){
+		// 创建Threadl类子类对象
+		MyThread mt = new MyThread();
+		// 调用Thread类中的方法start方法， 开启新的线程，执行run方法
+		mt.start();
+		
+		for(int i = 0; i < 20; i ++){
+			System.out.println("main"+ i);
+		}
+	}
+}
+// 执行结果
+// 随机打印
+```
+
