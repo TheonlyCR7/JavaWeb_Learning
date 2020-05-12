@@ -8,41 +8,27 @@
 * 异常处理
 * Properties
 
-## 教学目标
-- [ ] 能够说出IO流的分类和功能
-- [ ] 能够使用字节输出流写出数据到文件
-- [ ] 能够使用字节输入流读取数据到程序
-- [ ] 能够理解读取数据read(byte[])方法的原理
-- [ ] 能够使用字节流完成文件的复制
-- [ ] 能够使用FileWirter写数据到文件
-- [ ] 能够说出FileWriter中关闭和刷新方法的区别
-- [ ] 能够使用FileWriter写数据的5个方法
-- [ ] 能够使用FileWriter写数据实现换行和追加写
-- [ ] 能够使用FileReader读数据
-- [ ] 能够使用FileReader读数据一次一个字符数组
-- [ ] 能够使用Properties的load方法加载文件中配置信息
-
 # 第一章 IO概述
 
 ## 1.1 什么是IO
 
 生活中，你肯定经历过这样的场景。当你编辑一个文本文件，忘记了`ctrl+s` ，可能文件就白白编辑了。当你电脑上插入一个U盘，可以把一个视频，拷贝到你的电脑硬盘里。那么数据都是在哪些设备上的呢？键盘、内存、硬盘、外接设备等等。
 
-我们把这种数据的传输，可以看做是一种数据的流动，按照流动的方向，以内存为基准，分为`输入input` 和`输出output` ，即流向内存是输入流，流出内存的输出流。
+我们把这种数据的传输，可以看做是一种数据的流动，按照流动的方向，以内存为基准，分为`输入input` 和`输出output` ，即**流向内存是输入流，流出内存的输出流**。
 
 Java中I/O操作主要是指使用`java.io`包下的内容，进行输入、输出操作。**输入**也叫做**读取**数据，**输出**也叫做作**写出**数据。
 
 ## 1.2 IO的分类
 
-根据数据的流向分为：**输入流**和**输出流**。
+根据数据的流向分为：**输入流**和**输出流**。相对内存而言
 
 * **输入流** ：把数据从`其他设备`上读取到`内存`中的流。 
 * **输出流** ：把数据从`内存` 中写出到`其他设备`上的流。
 
 格局数据的类型分为：**字节流**和**字符流**。
 
-* **字节流** ：以字节为单位，读写数据的流。
-* **字符流** ：以字符为单位，读写数据的流。
+* **字节流** ：以字节为单位，读写数据的流
+* **字符流** ：以字符为单位，读写数据的流
 
 ## 1.3 IO的流向说明图解
 
@@ -59,21 +45,21 @@ Java中I/O操作主要是指使用`java.io`包下的内容，进行输入、输�
 
 ## 2.1 一切皆为字节
 
-一切文件数据(文本、图片、视频等)在存储时，都是以二进制数字的形式保存，都一个一个的字节，那么传输时一样如此。所以，字节流可以传输任意文件数据。在操作流的时候，我们要时刻明确，无论使用什么样的流对象，底层传输的始终为二进制数据。
+**一切文件数据**(文本、图片、视频等)在存储时，都是以二进制数字的形式保存，都一个一个的字节，那么传输时一样如此。所以，字节流可以传输任意文件数据。在操作流的时候，我们要时刻明确，无论使用什么样的流对象，底层传输的始终为二进制数据。
 
 ## 2.2 字节输出流【OutputStream】
 
-`java.io.OutputStream `抽象类是表示字节输出流的所有类的超类，将指定的字节信息写出到目的地。它定义了字节输出流的基本共性功能方法。
+`java.io.OutputStream `抽象类是表示字节输出流的所有类的超类，将指定的字节信息写出到目的地。它定义了字节输出流的基本共性功能方法
 
-* `public void close()` ：关闭此输出流并释放与此流相关联的任何系统资源。  
-* `public void flush() ` ：刷新此输出流并强制任何缓冲的输出字节被写出。  
-* `public void write(byte[] b)`：将 b.length字节从指定的字节数组写入此输出流。  
-* `public void write(byte[] b, int off, int len)` ：从指定的字节数组写入 len字节，从偏移量 off开始输出到此输出流。  
-* `public abstract void write(int b)` ：将指定的字节输出流。
+* `public void close()` ：关闭此输出流并释放与此流相关联的任何系统资源  
+* `public void flush() ` ：刷新此输出流并强制任何缓冲的输出字节被写出  
+* `public void write(byte[] b)`：将 b.length字节从指定的字节数组写入此输出流
+* `public void write(byte[] b, int off, int len)` ：从指定的字节数组写入 len字节，从偏移量 off开始输出到此输出流
+* `public abstract void write(int b)` ：将指定的字节输出流
 
 > 小贴士：
 >
-> close方法，当完成流的操作时，必须调用此方法，释放系统资源。
+> **close方法，当完成流的操作时，必须调用此方法，释放系统资源**。
 
 ## 2.3 FileOutputStream类
 
@@ -86,7 +72,7 @@ Java中I/O操作主要是指使用`java.io`包下的内容，进行输入、输�
 * `public FileOutputStream(File file)`：创建文件输出流以写入由指定的 File对象表示的文件。 
 * `public FileOutputStream(String name)`： 创建文件输出流以指定的名称写入文件。  
 
-当你创建一个流对象时，必须传入一个文件路径。该路径下，如果没有这个文件，会创建该文件。如果有这个文件，会清空这个文件的数据。
+当你创建一个流对象时，必须传入一个文件路径。**该路径下，如果没有这个文件，会创建该文件。如果有这个文件，会清空这个文件的数据**
 
 * 构造举例，代码如下：
 
@@ -95,6 +81,7 @@ public class FileOutputStreamConstructor throws IOException {
     public static void main(String[] args) {
    	 	// 使用File对象创建流对象
         File file = new File("a.txt");
+        // 创建写入 a.txt 的文件流
         FileOutputStream fos = new FileOutputStream(file);
       
         // 使用文件名称创建流对象
@@ -116,7 +103,7 @@ public class FOSWrite {
       	fos.write(97); // 写出第1个字节
       	fos.write(98); // 写出第2个字节
       	fos.write(99); // 写出第3个字节
-      	// 关闭资源
+      	// 关闭资源   一定要关闭
         fos.close();
     }
 }
@@ -169,12 +156,12 @@ cd
 
 ### 数据追加续写
 
-经过以上的演示，每次程序运行，创建输出流对象，都会清空目标文件中的数据。如何保留目标文件中数据，还能继续添加新数据呢？
+经过以上的演示，每次程序运行，**创建输出流对象，都会清空目标文件中的数据**。如何保留目标文件中数据，还能继续添加新数据
 
 - `public FileOutputStream(File file, boolean append)`： 创建文件输出流以写入由指定的 File对象表示的文件。  
 - `public FileOutputStream(String name, boolean append)`： 创建文件输出流以指定的名称写入文件。  
 
-这两个构造方法，参数中都需要传入一个boolean类型的值，`true` 表示追加数据，`false` 表示清空原有数据。这样创建的输出流对象，就可以指定是否追加续写了，代码使用演示：
+这两个构造方法，参数中都需要传入一个boolean类型的值，**`true` 表示追加数据，`false` 表示清空原有数据**。这样创建的输出流对象，就可以指定是否追加续写了，代码使用演示：
 
 ```java
 public class FOSWrite {
@@ -248,7 +235,7 @@ e
 
 ## 2.5 FileInputStream类
 
-`java.io.FileInputStream `类是文件输入流，从文件中读取字节。
+`java.io.FileInputStream `类是文件输入流，**从文件中读取字节**。
 
 ### 构造方法
 
@@ -277,6 +264,7 @@ public class FileInputStreamConstructor throws IOException{
 1. **读取字节**：`read`方法，每次可以读取一个字节的数据，提升为int类型，读取到文件末尾，返回`-1`，代码使用演示：
 
 ```java
+// 每次按顺序读取一个数据，返回一个字节, 不会换行
 public class FISRead {
     public static void main(String[] args) throws IOException{
       	// 使用文件名称创建流对象
