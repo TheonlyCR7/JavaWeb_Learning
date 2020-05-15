@@ -8,7 +8,7 @@
 
 # 第一章 等待唤醒机制
 
-![image-20200513135000316](../../../img/image-20200513135000316.png)
+![image-20200513135000316](./img/image-20200513135000316.png)
 
 ## 1.1 线程间通信
 
@@ -516,7 +516,10 @@ public interface Cook {
 ```java
 public class Demo05InvokeCook {
     public static void main(String[] args) {
-        // TODO 请在此使用Lambda【标准格式】调用invokeCook方法
+        // 重写了 invokeCook方法
+    invokeCook(() -> {
+      	System.out.println("吃饭啦！");
+    });
     }
 
     private static void invokeCook(Cook cook) {
@@ -596,7 +599,7 @@ public class Demo06Comparator {
 
 ### 代码分析
 
-下面我们来搞清楚上述代码真正要做什么事情。
+下面我们来搞清楚上述代码真正要做什么事情
 
 - 为了排序，`Arrays.sort`方法需要排序规则，即`Comparator`接口的实例，抽象方法`compare`是关键；
 - 为了指定`compare`的方法体，**不得不**需要`Comparator`接口的实现类；
@@ -644,7 +647,9 @@ public interface Calculator {
 ```java
 public class Demo08InvokeCalc {
     public static void main(String[] args) {
-        // TODO 请在此使用Lambda【标准格式】调用invokeCalc方法来计算120+130的结果ß
+		invokeCalc(120, 130, (int a, int b) -> {
+      		return a + b;
+    	});
     }
 
     private static void invokeCalc(int a, int b, Calculator calculator) {
@@ -684,7 +689,7 @@ public static void main(String[] args) {
 
 1. 小括号内**参数的类型**可以省略；
 2. 如果小括号内**有且仅有一个参**，则小括号可以省略；
-3. 如果大括号内**有且仅有一个语句**，则无论是否有返回值，都可以省略大括号、return关键字及语句分号。
+3. 如果大括号内**有且仅有一个语句**，则无论是否有返回值，都可以省略大括号、return关键字及语句分号
 
 > 备注：掌握这些省略规则后，请对应地回顾本章开头的多线程案例。
 
