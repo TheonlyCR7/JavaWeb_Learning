@@ -545,6 +545,18 @@ public class FileUpload_Server {
                         int len =0;
                         byte[] bytes = new byte[1024];
                         while((len = is.read(bytes))!=-1){
+                            //7.使用本地字节输出流FileOutputStream对象中的方法write,把读取到的文件保存到服务器的硬盘上
+                            fos.write(bytes,0,len);
+                        }
+                        //8.使用Socket对象中的方法getOutputStream,获取到网络字节输出流OutputStream对象
+                        //9.使用网络字节输出流OutputStream对象中的方法write,给客户端回写"上传成功"
+                        socket.getOutputStream().write("上传成功".getBytes());
+                        //10.释放资源(FileOutputStream,Socket,ServerSocket)
+                        fos.close();
+                        socket.close();
+                    }catch (IOException e){
+                        System.out.println(e);
+                    }
                 }
             }).start();
         }
