@@ -19,6 +19,14 @@ MySQL目录结构
 -   表：文件
 -   数据：文件中存储的字节
 
+```SQL
+SELECT  [ALL|DISTINCT]  <列名> as <别称>  [,<表名> as <别称> ].... FROM <表名> as <别称> [,<表名> as <别称> ].... 
+where <条件>  
+GROUP BY  <列名> 
+HAVING  <条件> 
+ORDER BY <列名>  [ASC|DESC]
+```
+
 
 
 ## SQL
