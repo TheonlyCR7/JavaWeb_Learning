@@ -5,8 +5,12 @@
 MySQL服务启动
 
 -   管理员模式打开cmd 
--   net start mysql  :    启动服务
--   net stop mysql  :    关闭服务
+
+-   ```cmd
+    mysql -uroot -p
+    ```
+
+    ![image-20200517092709159](img/image-20200517092709159.png)
 
 MySQL登录, 退出
 
@@ -73,7 +77,7 @@ ORDER BY <列名>  [ASC|DESC]
 
 >   您需要在数据库上执行的大部分工作都由 SQL 语句完成
 >
->   SQL对大小写不敏感
+>   SQL对**大小写不敏感**
 >
 >   某些数据库系统要求在每条 SQL 命令的末端使用分号，这样就可以在对服务器的相同请求中执行一条以上的语句
 
@@ -527,4 +531,93 @@ SELECT ID, NAMEE FROM schooldog WHERE ID > 0 ORDER BY ID LIMIT x, y;
 --LIMIT 为分页
 --LIMIT [第一条数据的索引],[本次打印数据的数量]
 ```
+
+
+
+## 数据库的备份
+
+1.  命令行的方式
+
+```java
+mysqldump -u用户名 -p密码 > 保存路径
+```
+
+![image-20200517091758564](img/image-20200517091758564.png)
+
+若无密码 则为空
+
+在指定位置生成
+
+![image-20200517091905933](img/image-20200517091905933.png)
+
+
+
+备份指定数据库
+
+```java
+mysqldump -uroot -p 数据库名称 > 指定位置
+```
+
+![image-20200517092146249](img/image-20200517092146249.png)
+
+a.sql文件内容
+
+![image-20200517092228635](img/image-20200517092228635.png)
+
+
+
+还原数据库
+
+先删除
+
+查看现有数据库  show databases;
+
+![image-20200517093035645](img/image-20200517093035645.png)
+
+删除数据库  school
+
+```sql
+drop database school;
+```
+
+![image-20200517093203075](img/image-20200517093203075.png)
+
+```sql
+show databases;
+```
+
+![image-20200517093259469](img/image-20200517093259469.png)
+
+
+
+```sql
+-- 先创建数据库 
+create database school;
+-- 使用数据库
+use school;
+-- 使用备份
+source d://a.sql;
+-- 查看
+show tables;
+```
+
+![image-20200517093647393](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200517093647393.png)
+
+![image-20200517093711266](img/image-20200517093711266.png)
+
+
+
+
+
+
+
+
+
+
+
+2.  Navicat
+
+直接点击备份即可
+
+![image-20200517093834419](img/image-20200517093834419.png)
 
