@@ -46,7 +46,9 @@ public class JdbcDemo1 {
         // Class.forName("org.gjt.mm.mysql.Driver");
         // 3. 获取数据库的连接对象
         Connection connection = DriverManager.getConnection(
-     "jdbc:mysql://localhost:3306/school?serverTimezone=GMT%2B8", 		"root","123456");   // 这里一定要注意使用英文字符,中英文的斜杠字符差不多 / /
+     "jdbc:mysql://localhost:3306/school?serverTimezone=GMT%2B8", 	   "root",
+     "123456"
+        );   // 这里一定要注意使用英文字符,中英文的斜杠字符差不多 / /
         // ?serverTimezone=GMT%2B8  保证编码的正常
             			
         // 4. 定义SQL语句
@@ -192,3 +194,132 @@ while(rs.next()) {
 
 
 **PreparedStatement: 执行SQL的对象**
+
+
+
+## 抽取JDBC工具类：JDBCUtils
+
+>   简化书写
+
+-   注册驱动抽取
+
+-   抽取一个方法获取连接对象
+
+    不想传入参数，还得保证工具类的通用性
+
+    采用配置文件的方式
+
+    jdbc.properties
+
+    ```properties
+    url = jdbc:mysql://localhost:3306/emp?serverTimezone=GMT%2B8
+    user = root
+    password = 123456
+    driver = com.mysql.cj.jdbc.Driver
+    ```
+
+    ![image-20200518121957364](img/image-20200518121957364.png)
+
+    此时只需要读取文件即可
+
+    ```java
+        private static String url;
+        private static String user;
+        private static String password;
+        private static String driver;
+        /**
+         * 文件的读取，只需要读取一次即可拿到这些值。使用静态代码块
+         */
+        static{
+            //读取资源文件，获取值。
+    
+            try {
+                //1. 创建Properties集合类。
+                Properties pro = new Properties();
+    
+                //获取src路径下的文件的方式--->ClassLoader 类加载器			ClassLoader classLoader =
+                	JDBCUtils.class.getClassLoader();
+             	URL res  = 
+                	classLoader.getResource("jdbc.properties");
+                String path = res.getPath();
+               // 		
+             System.out.println(path);///D:/IdeaProjects/itcast/out/production/day04_jdbc/jdbc.properties
+                //2. 加载文件
+               // pro.load(new FileReader("D:\\IdeaProjects\\itcast\\day04_jdbc\\src\\jdbc.properties"));
+                pro.load(new FileReader(path));
+    
+                //3. 获取数据，赋值
+                url = pro.getProperty("url");
+                user = pro.getProperty("user");
+                password = pro.getProperty("password");
+                driver = pro.getProperty("driver");
+                //4. 注册驱动
+                Class.forName(driver);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    ```
+
+    
+
+-   抽取一个方法释放资源
+
+
+
+### 练习
+
+工具类  **JDBCUtils.java**
+
+```java
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+//JDBC 工具类
+public class JCBCUtils {
+    // 获取连接
+    public static Connection getConnection(){
+        return null;
+    }
+
+    // 释放资源
+    public static void close(ResultSet rs, Statement stmt, Connection conn){
+        if(stmt != null){
+            try{
+                stmt.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+
+        if(conn != null){
+            try{
+                conn.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
+
+配置文件  **jdbc.properties**
+
+```properties
+# 根据实际情况改动
+url = jdbc:mysql://localhost:3306/emp?serverTimezone=GMT%2B8
+user = root
+password = 123456
+driver = com.mysql.cj.jdbc.Driver
+```
+
+实现类  **JDBCDemo3.java**
+
+```
+
+```
+
