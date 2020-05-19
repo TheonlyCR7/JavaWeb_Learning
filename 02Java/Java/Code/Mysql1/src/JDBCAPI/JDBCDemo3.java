@@ -1,3 +1,5 @@
+package JDBCAPI;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +14,7 @@ public class JDBCDemo3 {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入用户名：");
         String username = sc.nextLine();
-        System.out.println("请输入密码：");
+        System.out.println("请输入别名：");
         String password = sc.nextLine();
         //2.调用方法
         boolean flag = new JDBCDemo3().login(username, password);
@@ -54,6 +56,7 @@ public class JDBCDemo3 {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {
+            // 关闭资源
             JCBCUtils.close(rs, stmt, conn);
         }
         return false;

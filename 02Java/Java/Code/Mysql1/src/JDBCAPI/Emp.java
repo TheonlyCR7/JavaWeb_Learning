@@ -1,3 +1,5 @@
+package JDBCAPI;
+
 import java.util.Date;
 
 // 封装 数据库中表的JavaBean

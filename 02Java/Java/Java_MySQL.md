@@ -319,7 +319,165 @@ driver = com.mysql.cj.jdbc.Driver
 
 实现类  **JDBCDemo3.java**
 
+```java
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JDBCDemo3 {
+
+    // 执行语句
+    public static void main(String[] args) {
+        //1.键盘录入，接受用户名和密码
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入用户名：");
+        String username = sc.nextLine();
+        System.out.println("请输入别名：");
+        String password = sc.nextLine();
+        //2.调用方法
+        boolean flag = new JDBCDemo3().login(username, password);
+        //3.判断结果，输出不同语句
+        if(flag){
+            //登录成功
+            System.out.println("登录成功！");
+        }else{
+            System.out.println("用户名或密码错误！");
+        }
+    }
+
+    //
+    public boolean login(String username, String password){
+        if(username == null || password == null)
+            return false;
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try{
+            // 1. 获取连接
+            conn = JCBCUtils.getConnection();
+            // 2. 定义SQL
+            String sql = 
+"select * from students where name = '"+username+"' and nickname = '"+password+"' ";
+            // System.out.println(sql);
+            // 3. 获取执行SQL对象
+            stmt = conn.createStatement();
+            // 4. 执行查询
+            rs = stmt.executeQuery(sql);
+            return rs.next();  // 如果有下一行返回 true
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            // 关闭资源
+            JCBCUtils.close(rs, stmt, conn);
+        }
+        return false;
+    }
+}
 ```
 
-```
+**数据库 emp表格students**
+
+![image-20200519115520468](img/image-20200519115520468.png)
+
+执行结果：
+
+![image-20200519115554037](img/image-20200519115554037.png)
+
+![image-20200519115634285](img/image-20200519115634285.png)
+
+
+
+## JDBC控制事务
+
+1.  事务：一个包含多个步骤的业务操作。如果这个业务操作被事务管理，可能同时成功，可能同时失败
+
+2.  操作：
+
+    1.  开启事务
+    2.  提交事务
+    3.  回滚事务
+
+3.  使用 Connection 对象来管理事务
+
+    -   开启事务    在执行 SQL 之前开启事务
+
+    ```java
+    setAutoCommit(boolean autoCommit)
+    调用该方法设置参数为false 即开启事务
+    ```
+
+    -   提交事务   当所有 SQL 都执行完提交事务
+
+    ```java
+    commit()
+    ```
+
+    -   回滚事务  在 catch 中回滚事务
+
+    ```java
+    rollback()
+    ```
+
+    实例： 代码片段
+
+    ```java
+    // 1. 获取连接
+    connection = JCBCUtils.getConnection();
+    // 开启事务
+    connection.setAutoCommit(false);
+    // 2. 定义SQL
+    String sql1 = "update emp set money = money - ? where id = ?";
+    String sql2 = "update emp set money = money + ? where id = ?";
+    ```
+
+    ```java
+    // 5. 执行 SQL
+    pstmt1.executeUpdate();
+    pstmt2.executeUpdate();
+    // 提交事务
+    connection.commit();
+    ```
+
+    ```java
+    }catch (Exception e){
+    	if(connection != null){   // 当事务执行发生异常，进行回滚操作
+    		connection.rollback();
+    	}
+    	e.printStackTrace();
+    }finally {
+    	JCBCUtils.close(pstmt1, connection);
+    	JCBCUtils.close(pstmt2, connection);
+    }
+    ```
+
+
+
+# 数据库连接池
+
+>   其实就是一个容器（集合），存放数据库连接的容器
+>
+>   与线程池原理相似
+
+## 实现
+
+接口： `DataSource` 
+
+方法： 
+
+-   获取连接 getConnection()
+
+-   归还连接 Connection.close()  归还而不是关闭
+
+一般由数据库厂商实现
+
+-   ​	C3P0: 数据库连接池技术
+-   ​    Druid: 数据库连接池实现技术，由阿里巴巴提供
+
+
+
+## C3P0：数据库连接池技术
 
