@@ -481,3 +481,111 @@ public class JDBCDemo3 {
 
 ## C3P0：数据库连接池技术
 
+**配置文件 c3p0-config.xml** 
+
+默认配置
+
+![image-20200519163504176](img/image-20200519163504176.png)
+
+传入参数使用其他配置
+
+```java
+DataSource dataSource = new ComboPooledDataSource("otherc3p0");
+```
+
+![image-20200519163620668](img/image-20200519163620668.png)
+
+
+
+-   规定了 url, user, password, driverClass  初始化连接数量  最大连接数量
+
+```java
+public class C3P0Demo2 {
+    public static void main(String[] args) throws SQLException {
+        // 1. 调用配置文件，使用默认参数
+        DataSource dataSource = new ComboPooledDataSource();
+        // 2. 申请10 个连接并打印
+        for(int i = 1; i <= 10; i ++){
+            Connection connection = dataSource.getConnection();
+            System.out.println(i + ":" + connection);
+        }
+    }
+}
+```
+
+![image-20200519162540988](img/image-20200519162540988.png)
+
+当连接数超过10时，会等待3 秒 报错
+
+```java
+Exception in thread "main" java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.
+```
+
+高效利用连接的方法，使用完毕立即 close()  归还
+
+```java
+public class C3P0Demo2 {
+    public static void main(String[] args) throws SQLException {
+        // 1.
+        DataSource dataSource = new ComboPooledDataSource();
+        // 2.
+        for(int i = 1; i <= 11; i ++){
+            Connection connection = dataSource.getConnection();
+            System.out.println(i + ":" + connection);
+
+            if(i == 5){   // 连接5 会归还连接  所以会多出一个空闲
+                connection.close();
+            }
+        }
+    }
+}
+```
+
+![image-20200519163941129](img/image-20200519163941129.png)
+
+
+
+
+
+## Druid: 数据库连接池  阿里巴巴
+
+1. 步骤：
+    1.  定义配置文件：
+
+        -   properties 形式
+        -   需要自己指定所在目录
+    2.  加载配置文件
+    3.  获取数据库连接池对象  DruidDataSourceFactory
+    4.  获取连接
+
+2. 定义工具类  与上个类似
+	1. 定义一个类 JDBCUtils
+	2. 提供静态代码块加载配置文件, 初始化
+	3. 提供方法
+		-  获取连接方法
+		-  释放资源
+		-  获取连接池的方法
+
+
+
+# Spring JDBC
+
+>   Spring 提供的 JDBC 简单封装
+
+提供了一个 JDBCTemplate 对象简化 JDBC 的开发
+
+-   导入jar包
+
+-   创建 JDBCTemplate 对象 
+
+    ```java
+    JDBCTemplate template = nw JDBCTemplate();
+    ```
+
+-    调用JDBCTemplate 的方法实现CRUD操作
+
+    -   update()：执行DML语句  增、删、改语句
+    -   queryForMap()：查询结果捋结果集封装为map集合
+    -   queryForList()：查询结果捋结果集封装为list集合
+    -   query()：查询结果，捋结果封装为JavaBean对象
+    -   queryForobject：查询结果，捋结果封装为对象

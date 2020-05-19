@@ -7,8 +7,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.20" level="project" />
-    <orderEntry type="library" exported="" name="mchange-commons-java-0.2.12" level="project" />
-    <orderEntry type="library" exported="" name="c3p0-0.9.5.2" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="spring-jdbc-5.0.0.RELEASE">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/spring-jdbc-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-tx-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-beans-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-8.0.20.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/mchange-commons-java-0.2.12.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/commons-logging-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/c3p0-0.9.5.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/druid-1.0.9.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-core-5.0.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
