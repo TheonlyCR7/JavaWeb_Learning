@@ -70,16 +70,17 @@ footer{
 	display: table-row;
 }
 
-header{
-	weight:100px;
+header {
+	weight: 100px;
 	background: url("photo/dream.jpg");
-	font-family:"Time New Roman";
+	font-family: "Time New Roman";
 	padding: 10px;
+}
 	h1{
 		font-size:30px;
 		color:red;
 	}
-}
+
 
 #water{
 	float:bottom;

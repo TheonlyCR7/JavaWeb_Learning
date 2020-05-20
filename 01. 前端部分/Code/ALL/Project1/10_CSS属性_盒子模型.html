@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css属性</title>
+
+
+    <style>
+        div{
+            border: 1px solid red;
+            width: 100px;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            /*外边距*/
+           /* margin: 50px; */
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            /*
+                设置盒子的属性，让width和height就是最终盒子的大小
+             */
+            box-sizing: border-box;
+        }
+
+        .div3{
+            float: left;
+        }
+
+        .div4{
+            float: left;
+        }
+
+        .div5{
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div  class="div2">
+            <div class="div1"></div>
+
+    </div>
+
+    <div class="div3">aaaa</div>
+    <div class="div4">bbbbb</div>
+    <div class="div5">cccc</div>
+</body>
+</html>

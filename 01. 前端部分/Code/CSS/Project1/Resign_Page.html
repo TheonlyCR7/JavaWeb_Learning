@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        <!-- 选中所有元素 -->
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* repeat 设置背景图像是否及如何重复 */
+            background: url("img/1.jpg") no-repeat center;
+            /* 定义了元素的内边距   定义元素边框与元素内容之间的空间*/
+            padding-top: 25px;
+        }
+
+        .rg_layout{
+            width: 900px;
+            height: 500px;
+            /* 在一个声明中设置所有边框属性 */
+            border: 8px solid #EEEEEE;
+            background-color: white;
+            /*让div水平居中   为浏览器设定的值 */
+            margin: auto;
+        }
+
+        .rg_left{
+            /*border: 1px solid red;*/
+            float: left;
+            /* 设置元素的外边距 */
+            margin: 15px;
+        }
+        .rg_left > p:first-child{
+            color:#FFD026;
+            font-size: 20px;
+        }
+
+        /**/
+        .rg_left > p:last-child{
+            color:#A6A6A6;
+            font-size: 20px;
+
+        }
+
+
+        .rg_center{
+            float: left;
+            /* border: 1px solid red;*/
+
+        }
+
+        .rg_right{
+            /*border: 1px solid red;*/
+            float: right;
+            margin: 15px;
+        }
+
+        .rg_right > p:first-child{
+            font-size: 15px;
+
+        }
+        .rg_right p a {
+            color:pink;
+        }
+
+        .td_left{
+            width: 100px;
+            /* align 属性规定段落中文本的对齐方式 */
+            text-align: right;
+            height: 45px;
+        }
+        .td_right{
+            padding-left: 50px ;
+        }
+
+        #username,#password,#email,#name,#tel,#birthday,#checkcode{
+            width: 251px;
+            height: 32px;
+            border: 1px solid #A6A6A6 ;
+            /*设置边框圆角*/
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        #checkcode{
+            width: 110px;
+        }
+
+        #img_check{
+            height: 32px;
+            /* 设置元素的垂直对齐方式 */
+            vertical-align: middle;
+        }
+
+        #btn_sub{
+            width: 150px;
+            height: 40px;
+            background-color: #FFD026;
+            border: 1px solid #FFD026 ;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="rg_layout">
+    <div class="rg_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+
+    </div>
+
+    <div class="rg_center">
+        <div class="rg_form">
+            <!--定义表单 form-->
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td class="td_left"><label for="username">用户名</label></td>
+                        <td class="td_right"><input type="text" name="username" id="username" placeholder="请输入用户名"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="password">密码</label></td>
+                        <td class="td_right"><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="email">Email</label></td>
+                        <td class="td_right"><input type="email" name="email" id="email" placeholder="请输入邮箱"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="name">姓名</label></td>
+                        <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="tel">手机号</label></td>
+                        <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入手机号"></td>
+                    </tr>
+
+                    <!-- 带有两个输入字段和相关标记的简单 HTML 表单 -->
+                    <tr>
+                        <td class="td_left"><label>性别</label></td>
+                        <td class="td_right">
+                            <form>
+                            <input type="radio" name="gender" id="male">
+                                <label for="male">male</label>
+
+                            <input type="radio" name="gender" id="female">
+                                <label for="female">female</label>
+                            </form>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="birthday">出生日期</label></td>
+                        <td class="td_right"><input type="date" name="birthday" id="birthday" placeholder="请输入出生日期"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="td_left"><label for="checkcode" >验证码</label></td>
+                        <td class="td_right"><input type="text" name="checkcode" id="checkcode" placeholder="请输入验证码">
+                            <img id="img_check" src="img/verify_code.jpg">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" id="btn_sub" value="注册"></td>
+                    </tr>
+                </table>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <div class="rg_right">
+        <p>已有账号?<a href="#">立即登录</a></p>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
+
+
+<!--
+repeat	默认。背景图像将在垂直方向和水平方向重复。
+repeat-x	背景图像将在水平方向重复。
+repeat-y	背景图像将在垂直方向重复。
+no-repeat	背景图像将仅显示一次。
+-->
+
+<!--
+margin 属性设置元素的外边距。
+
+该属性可使用 1 到 4 个值：
+
+如果规定一个值，比如 div {margin: 50px}
+- 所有的外边距都是 50 px
+如果规定两个值，比如 div {margin: 50px 10px}
+- 上下外边距是 50px，左右外边距是 10 px。
+如果规定三个值，比如 div {margin: 50px 10px 20px}
+- 上外边距是 50 px，而左右外边距是 10 px，下外边距是 20 px。
+如果规定四个值，比如 div {margin: 50px 10px 20px 30px}
+- 上外边距是 50 px，右外边距是 10 px，下外边距是 20 px，左外边距是 30 px。
+-->
+
+<!--
+vertical-align
+可能的值
+值	        描述
+baseline	默认。元素放置在父元素的基线上。
+sub	        垂直对齐文本的下标。
+super	    垂直对齐文本的上标
+top	        把元素的顶端与行中最高元素的顶端对齐
+text-top	把元素的顶端与父元素字体的顶端对齐
+middle	    把此元素放置在父元素的中部。
+bottom	    把元素的顶端与行中最低的元素的顶端对齐。
+text-bottom	把元素的底端与父元素字体的底端对齐。
+length
+%	        使用 "line-height" 属性的百分比值来排列此元素。允许使用负值。
+inherit	    规定应该从父元素继承 vertical-align 属性的值。
+-->

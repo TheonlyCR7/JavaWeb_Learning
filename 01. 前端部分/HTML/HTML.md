@@ -14,16 +14,13 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset = "utf-8">
-		<title></title>
+		<meta charset = "utf-8">   不可缺
+		<title></title>				不可缺
 	</head>
 	<body>
 	</body>
 </html>
 
-<head>
-    之中必须有编码声明，标题
-</head>
 ```
 
 
@@ -36,7 +33,7 @@
 <h1>This is a heading</h1>
 
 段落通过<p></p>来定义
-连接通过<a>来定义
+链接通过<a>来定义
 <a href="http://www.w3school.com.cn">This is a link</a>
 图像通过<img>来定义
 <img src="w3school.jpg" width="104" height="142" />
@@ -59,21 +56,22 @@ HTML 元素指的是从开始标签（start tag）到结束标签（end tag）�
 
 没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。
 
-《br> 就是没有关闭标签的空元素（《br> 标签定义换行）。
+《br> 就是没有关闭标签的空元素（《br> 标签定义换行）
 
 在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。
 
-在开始标签中添加斜杠，比如 《br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。
+在开始标签中添加斜杠，比如 《br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式
 
-即使 《br> 在所有浏览器中都是有效的，但使用 《br /> 其实是更长远的保障。
+即使 《br> 在所有浏览器中都是有效的，**但使用 《br /> 其实是更长远的保障**
 
 
 
 ## HTML 属性
 
-HTML 标签可以拥有*属性*。属性提供了有关 HTML 元素的*更多的信息*。
-
-属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题
+>   HTML 标签可以拥有*属性*。属性提供了有关 HTML 元素的*更多的信息*。
+>
+>   属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题
+>
 
 ```html
 <h1 align="center">
@@ -87,11 +85,11 @@ HTML 标签可以拥有*属性*。属性提供了有关 HTML 元素的*更多的
 
 <hr/>
 
-hr 元素可用于分隔内容。
+hr 元素可用于**分隔内容**
 
 ## HTML 注释
 
-可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们。
+可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们
 
 注释是这样写的：
 
@@ -108,9 +106,19 @@ style 属性的作用：
 
 **提供了一种改变所有 HTML 元素的样式的通用方法。**
 
+
+
 ## HTML 样式实例 - 字体、颜色和尺寸
 
-font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸：
+
+
+*   font-family 属性规定了元素中文本的字体系列
+
+*   color 属性规定了元素中文本的颜色
+
+*   font-size 属性规定了元素中文本的字体尺寸
+
+*   text-align 属性规定了元素中文本的水平对齐方式
 
 ```html
 <html>
@@ -125,6 +133,8 @@ font-family、color 以及 font-size 属性分别定义元素中文本的字体�
 
 </html>
 ```
+
+
 
 ## 文本格式化标签
 
@@ -141,6 +151,8 @@ font-family、color 以及 font-size 属性分别定义元素中文本的字体�
 | <ins>    | 定义插入字。   |
 | <del>    | 定义删除字。   |
 
+
+
 ## 引用、引用和术语定义
 
 | 标签         | 描述               |
@@ -153,6 +165,8 @@ font-family、color 以及 font-size 属性分别定义元素中文本的字体�
 | <q>          | 定义短的引用语。   |
 | <cite>       | 定义引用、引证。   |
 | <dfn>        | 定义一个定义项目。 |
+
+
 
 ## HTML 引用
 
@@ -180,7 +194,7 @@ HTML <bdo> 元素定义双流向覆盖（bi-directional override）。
 
 
 
-### HTML ** 元素定义*数学变量*：
+### HTML 元素定义数学变量：
 
 ```html
 <p>Einstein wrote:</p>
@@ -196,7 +210,7 @@ HTML <bdo> 元素定义双流向覆盖（bi-directional override）。
 
 ### 外部样式表
 
-当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。
+当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观
 
 ```HTML
 <head>
@@ -206,7 +220,7 @@ HTML <bdo> 元素定义双流向覆盖（bi-directional override）。
 
 ### 内部样式表
 
-当单个文件需要特别样式时，就可以使用内部样式表。你可以在 head 部分通过 <style> 标签定义内部样式表。
+当单个文件需要特别样式时，就可以使用**内部样式表**。你可以在 head 部分通过 <style> 标签定义内部样式表
 
 ```HTML
 <head>
@@ -247,11 +261,11 @@ href 属性规定链接的目标。
 
 ## HTML 链接 - name 属性
 
-name 属性规定锚（anchor）的名称。
+name 属性规定锚（anchor）的名称
 
 您可以使用 name 属性创建 HTML 页面中的书签。
 
-书签不会以任何特殊方式显示，它对读者是不可见的。
+书签不会以任何特殊方式显示，它对读者是不可见的
 
 当使用命名锚（named anchors）时，我们可以创建直接跳至该命名锚（比如页面中某个小节）的链接，这样使用者就无需不停地滚动页面来寻找他们需要的信息了。
 
@@ -283,15 +297,21 @@ name 属性规定锚（anchor）的名称。
 	<body><a href="http://www.w3school.com.cn/html/html_links.asp#tips">有用的提示</a>
 	</body>
 </html>
-## HTML图像
+
+
+
+
+
+##HTML图像
+
 
 >   **gif 和 jpg 文件均可用作 HTML 背景**
 >
 >   **如果图像小于页面，图像会进行重复**
 
-在 HTML 中，图像由 <img> 标签定义。
+在 HTML 中，图像由 <img> 标签定义
 
-<img> 是空标签，意思是说，它只包含属性，并且没有闭合标签。
+<img> 是空标签，意思是说，它只包含属性，并且没有闭合标签
 
 要在页面上显示图像，你需要使用源属性（src）。src 指 "source"源。源属性的值是图像的 URL 地址。
 
@@ -407,7 +427,7 @@ border 定义一个边框
 
 ### 表格中的空单元格
 
-在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。
+在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框
 
 ```html
 <table border="1">
@@ -521,7 +541,7 @@ border 定义一个边框
 
 例子：
 
-```
+```html
 <h1>, <p>, <ul>, <table>
 ```
 
@@ -529,7 +549,7 @@ border 定义一个边框
 
 ### 内联元素
 
-```
+```html
 例子：<b>, <td>, <a>, <img>
 ```
 
@@ -650,7 +670,7 @@ and the most populous metropolitan area in the world.</p>
 
 ## 使用表格的 HTML 布局
 
-**注释：**<table> 元素不是作为布局工具而设计的。
+**注释：**<table> 元素不是作为布局工具而设计的
 
 <table》元素的作用是显示表格化的数据。
 
@@ -688,7 +708,7 @@ table.lamp th {
 
 ## HTML 响应式 Web 设计
 
->   所谓响应式Web设计，就是网页内容会随着访问它的视口及设备的不同而呈现不同的样式。
+>   所谓响应式Web设计，就是网页内容会随着访问它的视口及设备的不同而呈现不同的样式
 >
 >   不管你用什么终端访问网页，URL都是一个
 
@@ -781,7 +801,7 @@ CSS中直接设置：
 
 1、  轻量级的Javascript库：
 
-针对PC端网页当然会首选jQuery来作为前端javascript库，但是针对移动端来说，jQuery太重，而现在针对移动端来说，有很多优秀的框架可供使用，jQuery Mobile、YUI、XUI等是不错的框架，但是个人比较倾向于zepto。不过zepto预定义的一些事件，比如触屏滑动的swipe事件，在ios上完美支持，但是在android上，有些浏览器确实不支持的，这时候就需要寻求与一些第三方的javascript插件库，好在现在网上有很多优秀的第三方javascript插件库可供使用，所以各位按需索取吧。
+针对PC端网页当然会首选 jQuery 来作为前端 javascript 库，但是针对移动端来说，jQuery太重，而现在针对移动端来说，有很多优秀的框架可供使用，jQuery Mobile、YUI、XUI等是不错的框架，但是个人比较倾向于zepto。不过zepto预定义的一些事件，比如触屏滑动的swipe事件，在ios上完美支持，但是在android上，有些浏览器确实不支持的，这时候就需要寻求与一些第三方的javascript插件库，好在现在网上有很多优秀的第三方javascript插件库可供使用，所以各位按需索取吧。
 
  
 
@@ -874,7 +894,7 @@ CDN的全称是Content Delivery Network，即内容分发网络。其基本思�
 
 ### 框架标签（Frame）
 
-Frame 标签定义了放置在每个框架中的 HTML 文档。
+Frame 标签定义了放置在每个框架中的 HTML 文档
 
 在下面的这个例子中，我们设置了一个两列的框架集。第一列被设置为占据浏览器窗口的 25%。第二列被设置为占据浏览器窗口的 75%。HTML 文档 "frame_a.htm" 被置于第一个列中，而 HTML 文档 "frame_b.htm" 被置于第二个列中：
 
@@ -1015,8 +1035,6 @@ document.write("Hello World!")
 ### 绝对文件路径
 
 绝对文件路径是指向一个因特网文件的完整 URL：
-
-### 
 
 ```html
 <img src="https://www.w3school.com.cn/images/picture.jpg" alt="flower">
@@ -1239,9 +1257,6 @@ https://www.w3school.com.cn/html/html_colornames.asp
 >   表单本身并不可见
 
 <form> 元素定义 HTML 表单：
-
-### 
-
 ```html
 <form>
  .
@@ -1298,8 +1313,6 @@ form elements
 
 单选按钮允许用户在有限数量的选项中选择其中之一：
 
-### 
-
 ```html
 <form>
 <input type="radio" name="sex" value="male" checked>Male
@@ -1321,8 +1334,6 @@ form elements
 表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。
 
 表单处理程序在表单的 *action* 属性中指定：
-
-### 
 
 ```html
 <form action="action_page.php">
@@ -1404,8 +1415,6 @@ POST 的安全性更加，因为在页面地址栏中被提交的数据是不可
 
 本例只会提交 "Last name" 输入字段：
 
-### 
-
 ```html
 <form action="action_page.php">
 First name:<br>
@@ -1423,8 +1432,6 @@ Last name:<br>
 **<fieldset>**元素组合表单中的相关数据
 
 **<legend>**元素为 <fieldset> 元素定义标题。
-
-
 
 ```html
 <form action="action_page.php">
@@ -1490,9 +1497,7 @@ form elements
 
 ### <select> 元素（下拉列表）
 
-元素定义下拉列表：
-
-### 
+元素定义下拉列表
 
 ```html
 <select name="cars">
@@ -1557,8 +1562,6 @@ https://www.w3school.com.cn/tiy/t.asp?f=html_elements_select
 
 元素定义多行输入字段（文本域）：
 
-### 
-
 ```html
 <textarea name="message" rows="10" cols="30">
 The cat was playing in the garden.
@@ -1596,8 +1599,6 @@ HTML5 增加了如下表单元素：
 用户会在他们输入数据时看到预定义选项的下拉列表。
 
 <input> 元素的 *list* 属性必须引用 <datalist> 元素的 *id* 属性。
-
-### 
 
 通过 <datalist> 设置预定义值的 <input> 元素：
 
@@ -1649,8 +1650,6 @@ https://www.w3school.com.cn/tiy/t.asp?f=html_elements_datalist
 
 password 字段中的字符会被做掩码处理（显示为星号或实心圆）
 
-### 
-
 ```html
 <form>
  User name:<br>
@@ -1676,8 +1675,6 @@ password 字段中的字符会被做掩码处理（显示为星号或实心圆�
 表单处理程序（form-handler）通常是包含处理输入数据的脚本的服务器页面。
 
 在表单的 action 属性中规定表单处理程序（form-handler）：
-
-### 
 
 ```html
 <form action="action_page.php">
@@ -1707,8 +1704,6 @@ Last name:<br>
 
 Radio buttons let a user select ONLY ONE of a limited number of choices:
 
-### 
-
 ```html
 <form>
 <input type="radio" name="sex" value="male" checked>Male
@@ -1729,8 +1724,6 @@ Radio buttons let a user select ONLY ONE of a limited number of choices:
 
 复选框允许用户在有限数量的选项中选择零个或多个选项。
 
-### 
-
 ```html
 <form>
 <input type="checkbox" name="vehicle" value="Bike">I have a bike
@@ -1748,8 +1741,6 @@ Radio buttons let a user select ONLY ONE of a limited number of choices:
 ### Input Type: button
 
 `<input type="button>`定义按钮。
-
-### 
 
 ```html
 <input type="button" onclick="alert('Hello World!')" value="Click Me!">
@@ -2088,18 +2079,29 @@ HTML5 是跨平台的，被设计为在不同类型的硬件（PC、平板、手
 
 以下 HTML 4.01 元素已从 HTML5 中删除：
 
--   <acronym>
--   <applet>
--   <basefont>
--   <big>
--   <center>
--   <dir>
--   <font>
--   <frame>
--   <frameset>
--   <noframes>
--   <strike>
--   <tt>
+<acronym>
+
+<applet>
+
+   <basefont>
+
+   <big>
+
+   <center
+
+   <dir>
+
+   <font>
+
+   <frame>
+
+   <frameset>
+
+   <noframes>
+
+   <strike>
+
+   <tt>
 
 ## 新的语义/结构元素
 
@@ -2252,7 +2254,7 @@ HTML5 提供了定义页面不同部分的新语义元素：
 
 下例为一篇文章定义了页眉：
 
-```
+```html
 <article>
    <header>
      <h1>What Does WWF Do?</h1>
@@ -2273,7 +2275,7 @@ HTML5 提供了定义页面不同部分的新语义元素：
 
 您可以在一个文档中使用多个 <footer> 元素。
 
-```
+```html
 <footer>
    <p>Posted by: Hege Refsnes</p>
    <p>Contact information: <a href="mailto:someone@example.com">
@@ -2287,7 +2289,7 @@ HTML5 提供了定义页面不同部分的新语义元素：
 
 <nav> 元素旨在定义大型的导航链接块。不过，并非文档中所有链接都应该位于 <nav> 元素中！
 
-```
+```html
 <nav>
 <a href="/html/">HTML</a> |
 <a href="/css/">CSS</a> |
@@ -2311,7 +2313,7 @@ aside 内容应该与周围内容相关。
 
 ### 实例
 
-```
+```html
 <p>My family and I visited The Epcot center this summer.</p>
 
 <aside>
@@ -2392,3 +2394,160 @@ canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的�
 ```
 
 https://www.w3school.com.cn/html/html5_canvas.asp
+
+
+
+# XHTML
+
+>   XHTML是W3C标准
+>
+>   W3C 将 XHTML 定义为最新的HTML版本。XHTML 将逐渐取代 HTML
+>
+>   所有新的浏览器都支持 XHTML
+>
+>   **XHTML 是 HTML 与 XML（扩展标记语言）的结合物**
+>
+>   **XHTML 包含了所有与 XML 语法结合的 HTML 4.01 元素**
+
+XHTML 可以被所有的支持 XML 的设备读取，同时在其余的浏览器升级至支持 XML 之前，XHTML 使我们有能力编写出拥有良好结构的文档，这些文档可以很好地工作于所有的浏览器，并且可以向后兼容
+
+### 特点
+
+-   XHTML 元素必须被正确地嵌套
+-   XHTML 元素必须被关闭
+-   标签名必须用小写字母（对大小写敏感）
+-   XHTML 文档必须拥有根元素**<html></html>**
+-   空标签页必须关闭
+
+```xhtml
+A break: <br />
+A horizontal rule: <hr />
+An image: <img src="happy.gif" alt="Happy face" />
+```
+
+### 规则
+
+-   属性名必须小写
+-   属性值加引号
+-   属性不可简写
+
+```xhtml
+<table width="100%">
+
+<input checked="checked" />
+<input readonly="readonly" />
+<input disabled="disabled" />
+<option selected="selected" />
+<frame noresize="noresize" />
+```
+
+-   用id代替name属性
+-   在 "/" 符号前添加一个额外的空格，以使你的 XHTML 与当今的浏览器相兼容
+-   lang 属性应用于几乎所有的 XHTML 元素。它定义元素内部的内容的所用语言的类型
+
+```XHTML
+//HTML
+<img src="picture.gif" name="picture1" />
+//XHTML
+<img src="picture.gif" id="picture1" />
+//lang
+<div lang="no" xml:lang="no">Heia Norge!</div>
+```
+
+
+
+-   所有 XHTML 文档必须进行文件类型声明（DOCTYPE declaration）。在 XHTML 文档中必须存在html、head、body元素，而 title 元素必须位于在 head 元素中
+-   一个最小化的 XHTML 文件模板
+
+```xhtml
+<!DOCTYPE Doctype goes here>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Title goes here</title>
+</head>
+
+<body>
+</body>
+
+</html>
+```
+
+**在 XHTML 中，<html> 标签内的 xmlns 属性是必需的。然而，即使当 XHTML 文档中没有这个属性时，w3.org 的验证工具也不会提示错误。这是因为，"xmlns=http://www.w3.org/1999/xhtml" 是一个固定的值，即使你没有把它包含在代码中，这个值也会被添加到 <html> 标签中**
+
+
+
+### 文件类型
+
+>   有三种文件类型声明，**使用最普遍的是 XHTML Transitional**
+>
+>   文档类型声明总是位于首行
+>
+>   定义文档类型
+
+#### 类型声明
+
+**通过DTD来定义文档类型**
+
+三种类型的严格程度依次递减
+
+-   STRICT（严格类型）
+
+```dtd
+需要干净的标记，避免表现上的混乱。请与层叠样式表配合使用
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+严格 DTD 仅包含支持使用的或出现在框架结构中的元素和属性
+```
+
+
+
+-   TRANSITIONAL（过渡类型）
+
+```dtd
+当需要利用 HTML 在表现上的特性时，并且当需要为那些不支持层叠样式表的浏览器编写 XHTML 时使用
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+过渡 DTD 包含严格 DTD 中的一切，外加那些不赞成使用的元素和属性
+```
+
+
+
+-   FRAMESET（框架类型）
+
+```dtd
+需要使用HTML框架将浏览器窗口分割为两部分或更多框架时
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+框架 DTD 包含过渡 DTD 中的一切，外加框架
+```
+
+
+
+### XHTML模块
+
+-   选择被某种设备所支持的元素。
+-   在不打破 XHTML 标准的情况下，使用 XML 对 XHTML 进行扩展。
+-   针对小型设备，对 XHTML 进行简化。
+-   通过添加新的 XML 功能（比如 MathML, SVG, 语音和多媒体），针对复杂的应用对 XHTML 进行扩展。
+-   定义 XHTML 框架，比如 XHTML BASIC （针对移动设备的 XHTML 子集）。
+
+**W3C 已将 XHTML 的定义分为28种模型**
+
+https://www.w3school.com.cn/xhtml/xhtml_modules.asp
+
+
+
+### XHTML标准属性
+
+![image-20200317123816941](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317123816941.png)
+
+![image-20200317123855473](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317123855473.png)
+
+
+
+XHTML事件属性
+
+>   HTML 4.0 的新特性之一是使 HTML 事件触发浏览器中的行为，比方说当用户点击一个 HTML 元素时启动一段 JavaScript 。以下就是可被插入 HTML 标签以定义事件行为的一系列属性
