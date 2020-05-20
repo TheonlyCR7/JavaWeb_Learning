@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Execl</title>
+		<link type="text/css" rel="stylesheet" href="about/table.css">
+		<style>
+				tr:nth-child(even){
+			background-color: red;
+	}
+	tr:nth-child(odd){
+			background-color: green;
+	}
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>The cities I visited on my USA</caption>
+			<tr id="first">
+				<th>City</th>
+				<th>Date</th>
+				<th>Temperature</th>
+				<th>Altitude</th>
+			</tr>
+			<tr>
+				<td class="t_left">Walla </td>
+				<td class="t_left">June 15th</td>
+				<td class="t_first">75</td>
+				<td class="t_first">1204</td>
+			</tr>
+			<tr>
+				<td class="t_left">Magic</td>
+				<td class="t_left">June</td>
+				<td class="t_first">60</td>
+				<td>
+				<table class="t_first">
+					<tr>
+						<th>Tess</th>
+						<td>4/5</td>
+					</tr>
+					<tr>
+						<th>Tony</th>
+						<td>5/5</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		<div id="chanage">
+		<form action=".php" method="POST">
+		<p> Just in your name (and click Submit) to enter the contest;</br>
+
+			First name:<input type="text" name="firstname" value=""></br>
+			Last name:<input type="text" name="lastname" value=""></br>
+			<input type="submit">
+		</p>
+		</form>	
+		</div>
+	</body>
+</html>			
+

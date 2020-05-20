@@ -1,0 +1,94 @@
+body{
+	background-color:orange;
+	font-family: "Time New Roman", Geneva,sans-serif;
+	font-size:16px;
+	width:1500px;
+	}
+h2{
+	font-size:1.2em;
+}
+#elixirs{
+	background: #efe5d0 url(../photo/connection.jpg) bottom right;
+	font-size: 105%;
+	padding:15px;
+	
+	margin: 0 10px 10px 470px;
+
+}
+div h2{
+	color: white;
+}
+#bingo {
+	background: #efe5d0 url(../photo/dream.jpg) top left;
+	font-size: 105%;
+	padding: 15px;
+	margin: 0 10px 10px 10px;
+	float: left;
+	width: 420px;
+}
+#water{
+	font-size:105%;
+	padding: 15px;
+	margin: 0 10px 10px 10px;
+	float: right;
+	clear:left;
+	text-align: center;
+}
+#footer{
+	font-size:small;
+}
+em.works{
+						font-family:"Times New Roman";
+						font-size:14px;
+			}
+em.workers{
+						font-weight:bold;
+						font-size:14px;
+			}
+span.morks{
+	font-style: italic;
+	font-size:15px;
+}
+span.morkers{
+	font-weight: bold;
+	font-size:15px;
+}
+
+#guarantee{
+	border-color: black;
+	border-width: 1px;
+	border-style: dashed;
+	border-color: white;
+	background-color: #a7cece;
+	padding:		25px;
+	padding-left:	80px;
+	margin:		30px;
+	margin-right:	250px;
+	background-image: url(../photo/logo.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+a:link{
+	color: green;
+}
+a:visited{
+	color:red;
+}
+a:hover{
+	color:yellow;
+}
+@media screen and (min-device-width: 481px;) {
+	#guarantee {
+		matgin-right: 259px;
+	}
+}
+@media screen and (max-device-width: 480px;) {
+	#guarantee {
+		matgin-right: 30px;
+	}
+}
+@media print {
+	body {
+		font-family: Times, "Times New Roman", serif;
+	}
+}

@@ -1,0 +1,96 @@
+
+h1,h2{
+			 font-size:1.5em;
+			}
+			a{
+				color:green;
+			}
+			img.main_photo{
+				width:55%;
+			}
+			img.sidebar_photo{
+					width:100%;
+			}
+#dc{
+	position: fixed;
+	bottom:0;
+	left:0;
+}
+#dc a, img{
+		border:none;
+}
+section{
+	display: table-cell;
+
+	padding: 5px;
+	vertical-align:top;
+	background: url(photo/dream.jpg);
+}
+div#tableContainer{
+		display: table;
+}
+
+div#tableRow:{
+		display: table-row;
+}
+
+aside{
+	display: table-cell;
+	background: #efe5d0 url(photo/Connection.jpg) top right;
+	font-size:105%;
+	padding: 15px;
+	vertical-align: top;
+}
+#main{
+	display: table-cell;
+	background: #efe5d0 url(photo/tomato.jpg) top left;
+	font-size: 105%;
+	padding: 15px;
+	vertical-align: top;
+	.img{
+		width:60%;
+	}
+}
+
+
+footer{
+	background-color: #675c47;
+	color:		#efe5d0;
+	text-align:		center;
+	padding:		15px;
+	margin:		0px 10px 10px 10px;
+	font-size: 90%;
+}
+
+#tableContainer{
+		display: table;
+		border-spacing: 0px;
+}
+#tableRow{
+	display: table-row;
+}
+
+header{
+	weight:100px;
+	background: url("photo/dream.jpg");
+	font-family:"Time New Roman";
+	padding: 10px;
+	h1{
+		font-size:30px;
+		color:red;
+	}
+}
+
+#water{
+	float:bottom;
+	clear:left;
+}
+
+.works{
+	fonr-size:15px;
+	font-family:  Verdana, Geneva,sans-serif;
+}
+.workers{
+	fonr-size:16px;
+	font-family:"Cominc Sans","Apple Chancery",sans-serif;
+}

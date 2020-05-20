@@ -589,3 +589,10 @@ public class C3P0Demo2 {
     -   queryForList()：查询结果捋结果集封装为list集合
     -   query()：查询结果，捋结果封装为JavaBean对象
     -   queryForobject：查询结果，捋结果封装为对象
+
+
+
+## 单元测试，让方法独立执行
+
+>   一种测试代码的常用方法
+

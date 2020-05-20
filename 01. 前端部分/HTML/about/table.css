@@ -1,0 +1,37 @@
+table{
+	margin-left: 20px;
+	margin-right: 20px;
+	border:thin solid black;
+	caption-side: bottom;
+	border-collapse: collapse;
+}
+
+td,th{
+		border:thin dotted gray;
+		padding: 5px;
+}
+caption{
+		font-style:italic;
+		padding-top:8px;
+}
+
+#first{
+		vertical-align: center;
+		background-color: white;
+}
+
+.t_left{
+		vertical-align: left;
+}
+
+.t_first{
+		vertical-align: right;
+}
+
+table table th{
+		background-color: white;
+}
+#change{
+	vertical-align: top;
+	vertical-align: center;
+}

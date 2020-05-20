@@ -50,6 +50,8 @@ public class Emp {
         this.joindate = joindate;
     }
 
+
+
     // 输出
     @Override
     public String toString() {
@@ -61,4 +63,6 @@ public class Emp {
                 ", joindate=" + joindate +
                 '}';
     }
+
+
 }

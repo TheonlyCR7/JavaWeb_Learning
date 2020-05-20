@@ -1,0 +1,47 @@
+
+div#tableContainer{
+		display: table;
+}
+
+div#tableRow:{
+		display: table-row;
+}
+
+#main{
+	display: table-cell;
+	background: #efe5d0 url(photo/tomato/jpg) top left;
+	font-size: 105%;
+	padding: 15px;
+	vertical-align: top;
+	width:  900px;
+	float:  left;
+}
+
+#sidebar{
+	display: table-cell;
+	background: #efe5d0 url(photo/Connection.jpg) top left;
+	font-size:105%;
+	padding: 15px;
+	vertical-align: top;
+	position: absolute;
+	top:	0px;
+	right:	0px;
+	width:	400px;
+}
+
+#footer{
+	background-color: #675c47;
+	color:		#efe5d0;
+	text-align:		#10px;
+	padding:		15px;
+	margin:		0px 10px 10px 10px;
+	clear:		right;
+}
+
+#tableContainer{
+		display: table;
+		border-spacing: 10px;
+}
+#tableRow{
+	display: table-row;
+}
