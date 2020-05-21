@@ -1,5 +1,9 @@
 # JavaScript
 
+**让用户可以与网站交互**
+
+客户端脚本语言
+
 >   JavaScript 是一种多范式的动态语言，它包含类型、运算符、标准内置（ built-in）对象和方法
 >
 >   语法来源于 Java 和 C，所以这两种语言的许多语法特性同样适用于 JavaScript
@@ -7,6 +11,108 @@
 >   JavaScript 通过原型链而不是类来支持面向对象编程
 >
 >   JavaScript同样支持函数式编程——因为它们也是对象，函数也可以被保存在变量中，并且像其他对象一样被传递
+
+
+
+## 与HTML结合方式
+
+>   <script> 可以定义在html页面的任何地方 但是定义的位置会影响执行的顺序
+
+1.  内部JS
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+        <title>Title</title>
+    	// 在html 内部  为内部JS  顺序执行
+    	<script>
+    		alert("Hello World");
+    	</script>
+    </head>
+    <body>
+    </body>
+    </html>
+    ```
+
+
+
+2.  外部JS
+
+    通过src 属性引入外部的js 文件
+
+    ```html
+    <script src="./js/a.js"></script>
+    ```
+
+
+
+## 注释
+
+1.  单行注释
+
+    ```js
+    // 注释内容
+    ```
+
+2.  多行注释
+
+    ```js
+    /* 注释内容 */
+    ```
+
+
+
+## 一个练习
+
+>   输出99乘法表
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+    <style>
+        td{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+
+        document.write("<table | align='center'>");
+        // 1. 完成基本的 for 循环 展示乘法表
+        for (var i = 1; i <= 9; i++){
+            document.write("<tr>");
+            for(var j = 1; j <= i; j ++){
+                document.write("<td>");
+                // &nbsp; 代表空格
+                document.write(i + " * " + j + " = " +  i*j + "&nbsp; &nbsp; &nbsp;");
+
+                document.write("</td>");
+            }
+            // 换行操作
+            document.write("<tr>");
+        }
+
+        // 完成表格嵌套
+        document.write("</table>");
+    </script>
+</head>
+
+</html>
+```
+
+![image-20200521133003105](img/image-20200521133003105.png)
+
+
+
+
+
+
+
+
 
 
 
@@ -449,7 +555,44 @@ obj["for"] = "Simon"; // 工作正常
 
 **注意：**从 EcmaScript 6 开始，对象键可以在创建时使用括号表示法由变量定义。{[phoneType]: 12345} 可以用来替换 `var userPhone = {}; userPhone[phoneType] = 12345` .
 
+
+
 ## 数组
+
+Array:数组对象
+
+1.  创建：
+         1. var arr = new Array(元素列表);
+      
+         2. var arr = new Array(默认长度);
+      
+         3. var arr = [元素列表];
+      
+            ```js
+                    var arr1 = new Array(1,2,3);
+                    var arr2 = new Array(5);
+                    var arr3 = [1,2,3,4];
+            
+                    var arr4 = new Array();
+            
+                    document.write(arr1 +"<br>");
+                    document.write(arr2 +"<br>");
+                    document.write(arr3 +"<br>");
+                    document.write(arr4 +"<br>");
+            ```
+      
+            ![image-20200521140435819](img/image-20200521140435819.png)
+      
+      
+2.  方法
+     join(参数):将数组中的元素按照指定的分隔符拼接为字符串
+     push()	向数组的末尾添加一个或更多元素，并返回新的长度。
+     
+3. 属性
+	length:数组的长度
+4. 特点：
+	1. JS中，数组元素的类型可变的。
+	2. JS中，数组长度可变的。
 
 JavaScript 中的数组是一种特殊的对象。它的工作原理与普通对象类似（以数字为属性名，但只能通过`[]` 来访问），但数组还有一个特殊的属性——`length`（长度）属性。这个属性的值通常比数组最大索引大 1。
 
@@ -478,7 +621,7 @@ a[100] = "fox";
 a.length; // 101
 ```
 
-记住：数组的长度是比数组最大索引值多一的数。
+记住：**数组的长度是比数组最大索引值多一的数**。
 
 如果试图访问一个不存在的数组索引，会得到 `undefined`：
 
@@ -541,9 +684,178 @@ a.push(item);
 | `a.splice(start, delcount[, item1[, ...[, itemN]]])` | 从 `start` 开始，删除 `delcount` 个元素，然后插入所有的 `item`。 |
 | `a.unshift(item1[, item2[, ...[, itemN]]])`          | 将 `item` 插入数组头部，返回数组新长度（考虑 `undefined`）。 |
 
+
+
+## Date
+
+Date：日期对象
+     1. 创建：
+         var date = new Date();
+
+ 2. 方法：
+     toLocaleString()：返回当前date对象对应的时间本地字符串格式
+     getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差
+
+```js
+        var date = new Date();
+
+        document.write(date + "<br>");
+
+        document.write(date.toLocaleString() + "<br>");
+
+        document.write(date.getTime() + "<br>");
+```
+
+![image-20200521141830659](img/image-20200521141830659.png)
+
+
+
+## Math：数学对象
+
+     1. 创建：
+         * 特点：Math对象不用创建，直接使用。  Math.方法名();
+
+ 2. 方法：
+     random():返回 0 ~ 1 之间的随机数。 含0不含1
+     ceil(x)：对数进行上舍入。
+     floor(x)：对数进行下舍入。
+     round(x)：把数四舍五入为最接近的整数。
+ 3. 属性：
+     PI
+
+```js
+        document.write(Math.PI +"<br>");
+        document.write(Math.random() +"<br>");
+        document.write(Math.round(3.14) +"<br>");
+        document.write(Math.ceil(3.14) +"<br>");
+        document.write(Math.floor(3.14) +"<br>");
+```
+
+![image-20200521142019515](img/image-20200521142019515.png)
+
+
+
+## 正则表达式
+
+2. 正则对象：
+     1. 创建
+         1. var reg = new RegExp("正则表达式");
+         2. var reg = /正则表达式/;
+     2. 方法
+         1. test(参数):验证指定的字符串是否符合正则定义的规范
+
+```js
+    <script >
+        // 1.
+        var reg = new RegExp("^\\w{6,12}$");
+        // 2.
+        var reg2= /^\w{6,12}$/;
+
+        /*alert(reg);
+        alert(reg2);*/
+
+        var username = "zhangsan";
+
+        //验证
+        var flag = reg.test(username);
+        alert(flag);
+
+    </script>
+```
+
+
+
+
+
+## Global 全局变量
+
+1. 特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  方法名();
+2. 方法：
+    encodeURI():url编码
+    decodeURI():url解码
+
+    encodeURIComponent():url编码,编码的字符更多
+    decodeURIComponent():url解码
+
+    parseInt():   将字符串转为数字
+    
+    *   逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number
+        isNaN():判断一个值是否是NaN
+*   NaN六亲不认，连自己都不认。NaN参与的==比较全部问false
+    
+    eval():  讲 JavaScript 字符串，并把它作为脚本代码来执行。
+            3. URL编码
+               传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2
+
+```js
+<script >
+    var str = "http://www.baidu.com?wd=传智播客";
+    var encode = encodeURI(str);
+    document.write(encode +"<br>");//%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2
+    var s = decodeURI(encode);
+    document.write(s +"<br>");//传智播客
+
+
+    var str1 = "http://www.baidu.com?wd=传智播客";
+    var encode1 = encodeURIComponent(str1);
+    document.write(encode1 +"<br>");//%E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2
+    var s1 = decodeURIComponent(encode);
+    document.write(s1 +"<br>");//传智播客
+
+
+    var str = "a234abc";
+    var number = parseInt(str);
+    //alert(number + 1);
+
+    var a = NaN;
+
+    document.write(a == NaN);
+    document.write(isNaN(a));
+
+    var jscode = "alert(123)";
+    eval(jscode);
+```
+
+
+
 ## 函数
 
-学习 JavaScript 最重要的就是要理解对象和函数两个部分。最简单的函数就像下面这个这么简单：
+>   方法定义时，形参的类型不用写
+>
+>   同名函数会覆盖，以近的为准
+>
+>   参数可以选择不传 返回undeined类型
+
+
+
+```js
+        Function：函数(方法)对象
+            1. 创建：
+var fun = new Function(形式参数列表,方法体);  //忘掉吧
+2. function 方法名称(形式参数列表){
+     方法体
+}
+
+3. var 方法名 = function(形式参数列表){
+      方法体
+}
+方法：
+
+属性：
+ length:代表形参的个数
+
+特点：
+1. 方法定义是，形参的类型不用写,返回值类型也不写。
+2. 方法是一个对象，如果定义名称相同的方法，会覆盖
+3. 在JS中，方法的调用只与方法的名称有关，和参数列表无关
+4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
+
+调用：
+方法名称(实际参数列表);
+```
+
+
+学习 JavaScript 最重要的就是要理解**对象和函数**两个部分。最简单的函数就像下面这个这么简单：
 
 ```js
 function add(x, y) {
@@ -552,9 +864,9 @@ function add(x, y) {
 }
 ```
 
-这个例子包括你需要了解的关于基本函数的所有部分。一个 JavaScript 函数可以包含 0 个或多个已命名的变量。函数体中的表达式数量也没有限制。你可以声明函数自己的局部变量。`return` 语句在返回一个值并结束函数。如果没有使用 `return` 语句，或者一个没有值的 `return` 语句，JavaScript 会返回 `undefined`。
+这个例子包括你需要了解的关于基本函数的所有部分。一个 JavaScript 函数可以包含 0 个或多个已命名的变量。函数体中的表达式数量也没有限制。你可以声明函数自己的局部变量。`return` 语句在返回一个值并结束函数。如果没有使用 `return` 语句，或者一个没有值的 `return` 语句，**JavaScript 会返回 `undefined`**
 
-已命名的参数更像是一个指示而没有其他作用。如果调用函数时没有提供足够的参数，缺少的参数会被 `undefined` 替代。
+已命名的参数更像是一个指示而没有其他作用。如果调用函数时没有提供足够的参数，缺少的参数会被 `undefined` 替代
 
 ```js
 add(); // NaN 

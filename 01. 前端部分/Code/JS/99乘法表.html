@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+    <style>
+        td{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+
+        document.write("<table | align='center'>");
+        // 1. 完成基本的 for 循环 展示乘法表
+        for (var i = 1; i <= 9; i++){
+            document.write("<tr>");
+            for(var j = 1; j <= i; j ++){
+                document.write("<td>");
+                // &nbsp; 代表空格
+                document.write(i + " * " + j + " = " +  i*j + "&nbsp; &nbsp; &nbsp;");
+
+                document.write("</td>");
+            }
+            // 换行操作
+            document.write("<tr>");
+        }
+
+        // 完成表格嵌套
+        document.write("</table>");
+    </script>
+</head>
+
+</html>
