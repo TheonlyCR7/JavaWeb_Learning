@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="cn">
 <head>
+    <meta charset="utf-8">
+    <title>Window对象</title>
     <script type="text/javascript">
         function disp_prompt()
         {
@@ -10,12 +12,17 @@
                 document.write("Hello " + name + "!")
             }
         }
+        // 打开新窗口
+        var openBtn = document.getElementById("openBtn");
+        openBtn.onclick = function(){
+            // 打开窗口
+            open();
+        }
+        open();
     </script>
 </head>
 <body>
-
-<input type="button" onclick="disp_prompt()"
-       value="Display a prompt box" />
+    <input id="openBn" type="button" value="打开窗口">
 
 </body>
 </html>
