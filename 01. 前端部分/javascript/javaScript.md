@@ -563,11 +563,11 @@ Array:数组对象
 
 1.  创建：
          1. var arr = new Array(元素列表);
-      
+   
          2. var arr = new Array(默认长度);
-      
+          
          3. var arr = [元素列表];
-      
+          
             ```js
                     var arr1 = new Array(1,2,3);
                     var arr2 = new Array(5);
@@ -580,10 +580,9 @@ Array:数组对象
                     document.write(arr3 +"<br>");
                     document.write(arr4 +"<br>");
             ```
-      
+          
             ![image-20200521140435819](img/image-20200521140435819.png)
-      
-      
+   
 2.  方法
      join(参数):将数组中的元素按照指定的分隔符拼接为字符串
      push()	向数组的末尾添加一个或更多元素，并返回新的长度。
@@ -782,7 +781,7 @@ Date：日期对象
     *   逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number
         isNaN():判断一个值是否是NaN
 *   NaN六亲不认，连自己都不认。NaN参与的==比较全部问false
-    
+  
     eval():  讲 JavaScript 字符串，并把它作为脚本代码来执行。
             3. URL编码
                传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2
@@ -1255,4 +1254,222 @@ y(7); // 返回 27
 作用域对象组成了一个名为作用域链（scope chain）的（调用）链。它和 JavaScript 的对象系统使用的原型（prototype）链相类似。
 
 一个**闭包**，就是 一个函数 与其 被创建时所带有的作用域对象 的组合。闭包允许你保存状态——所以，它们可以用来代替对象。[这个 StackOverflow 帖子里](http://stackoverflow.com/questions/111102/how-do-javascript-closures-work)有一些关于闭包的详细介绍。
+
+
+
+## BOM
+
+>   将浏览器各个组成部分封装成对象
+
+### 组成部分
+
+*   Window: 窗口对象
+
+    ![image-20200522114439485](img/image-20200522114439485.png)
+
+*   Navigator: 浏览器对象
+
+    ![image-20200522114247248](img/image-20200522114247248.png)
+
+*   Screen: 显示器屏幕对象
+
+*   History: 历史记录对象
+
+    浏览的历史记录
+
+*   Location: 地址栏对象
+
+    ![image-20200522114532962](img/image-20200522114532962.png)
+
+
+
+### Window窗口对象
+
+*   方法
+
+    ```js
+    alert() 显示带有一段消息和一个确认按钮的警告框
+    confirm() 显示带有一段消息以及确认按钮和取消按钮的对话框
+    	点击确定按钮，返回 true
+    	点击取消按钮，返回 false
+    promot() 显示可提示用户输入的对话框
+    ```
+
+    alert()
+
+    ![image-20200522122739253](img/image-20200522122739253.png)
+
+
+
+​	confirm() 
+
+```js
+<html>
+    <head>
+        <script type="text/javascript">
+            function show_confirm(){
+            	var r=confirm("Press a button!");
+                if (r==true)
+                  {
+                  alert("You pressed OK!");
+                  }else{
+                  alert("You pressed Cancel!");
+                  }
+            }
+        </script>
+    </head>
+    <body>
+
+        <input type="button" onclick="show_confirm()" 
+			value="Show a confirm box" />
+
+    </body>
+</html>
+```
+
+![image-20200522122739253](img/111.gif)
+
+
+
+promot()  
+
+![image-20200522122739253](img/222.gif)
+
+
+
+
+
+
+
+
+
+
+
+
+
+## DOM
+
+>   控制页面标签文档内容
+
+*   获取页面标签对象
+
+```js
+// 通过元素 id 获取元素对象
+document.getElementById("id值");
+// 修改标签体内容  innerHTML
+使用inner HTML修改标签体内容
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM学习</title>
+//    顺序执行 无法捕捉到light id
+//    <script>
+//        var light = document.getElementById(light);
+//        alert(light);
+//    </script>
+</head>
+<body>
+
+    <img id="light" src="img/1.jpg">
+    <h1 id="title" >look this is a h1.</h1>
+    <!--可以捕捉-->
+    <script>
+        <!--双引号不要忘-->
+        var light = document.getElementById("light");
+        alert(light);
+        alert("change this picture");
+        light.src = "img/2.jpg";
+
+        var title = document.getElementById("title");
+        title.innerHTML = "不识妻美刘强东";
+    </script>
+</body>
+</html>
+```
+
+
+
+## 事件简单学习
+
+>   某些组件执行操作，触发代码执行
+
+### 绑定事件
+
+1.  在html标签上，指定事件的属性操作，属性值就是 js 代码
+
+    onclick  – 单击事件
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>事件绑定学习</title>
+        <script>
+            function fun() {
+                alert('我被点击了了');
+            }
+        </script>
+    </head>
+    <body>
+        <img id="light" src="img/3.jpg" onclick="fun();">
+    </body>
+    </html>
+    ```
+
+
+
+2.  直接获取 light 对象
+
+    ```js
+        <script>
+            var light = document.getElementById("light");
+            light.onclick = fun();
+        </script>
+    ```
+
+
+
+### 小练习：实现图片切换
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灯泡开关</title>
+    <style>
+        img{
+            width: 160px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <img id="light" src="img/1.jpg">
+
+    <script>
+        var light = document.getElementById('light');
+        var flag = false;   // 默认灯泡是灭的
+
+        // 绑定单击事件
+        light.onclick = function () {
+            if(flag){
+                // 如果图片为 2.jpg  则切换
+                light.src = "img/1.jpg";
+                // alert("图片已经切换");
+                flag = false;
+            }else{
+                // 如果图片为 1.jpg 则切换
+                light.src = "img/2.jpg";
+                // alert("图片已经切换");
+                flag = true;
+            }
+        }
+    </script>
+</body>
+</html>
+```
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM学习</title>
+<!--    顺序执行 无法捕捉到light id
+    <script>
+        var light = document.getElementById(light);
+        alert(light);
+    </script>
+-->
+</head>
+<body>
+
+    <img id="light" src="img/1.jpg">
+    <h1 id="title" >look this is a h1.</h1>
+    <!--可以捕捉-->
+    <script>
+        <!--双引号不要忘-->
+        var light = document.getElementById("light");
+        alert(light);
+        alert("change this picture");
+        light.src = "img/2.jpg";
+
+        var title = document.getElementById("title");
+        title.innerHTML = "不识妻美刘强东";
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定学习</title>
+    <style>
+        #light{
+            width:190px;
+            height: 168px;
+        }
+    </style>
+    <script>
+
+        function fun() {
+            alert('我被点击了了');
+        }
+    </script>
+</head>
+<body>
+    <img id="light" src="img/3.jpg" onclick="fun();">
+
+    <script>
+        var light = document.getElementById("light");
+        light.onclick = fun();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灯泡开关</title>
+    <style>
+        img{
+            width: 160px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <img id="light" src="img/1.jpg">
+
+    <script>
+        var light = document.getElementById('light');
+        var flag = false;   // 默认灯泡是灭的
+
+        // 绑定单击事件
+        light.onclick = function () {
+            if(flag){
+                // 如果图片为 2.jpg  则切换
+                light.src = "img/1.jpg";
+                // alert("图片已经切换");
+                flag = false;
+            }else{
+                // 如果图片为 1.jpg 则切换
+                light.src = "img/2.jpg";
+                // alert("图片已经切换");
+                flag = true;
+            }
+        }
+    </script>
+</body>
+</html>
