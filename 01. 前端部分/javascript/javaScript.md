@@ -1473,3 +1473,339 @@ document.getElementById("id值");
 </html>
 ```
 
+
+
+### 实现开关窗口
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window对象</title>
+
+</head>
+<body>
+    <input id="openBtn" type="button" value="打开窗口">
+    <input id="closeBtn" type="button" value="关闭窗口">
+
+    <script>
+        //打开新窗口
+        var openBtn = document.getElementById("openBtn");
+        var newWindow;
+        openBtn.onclick = function(){
+            //打开新窗口 百度
+            newWindow = open("https://www.baidu.com");
+        }
+
+        //关闭新窗口
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.onclick = function(){
+           // 关闭新窗口
+            newWindow.close();
+        }
+
+    </script>
+</body>
+</html>
+```
+
+![image-20200522122739253](img/333.gif)
+
+
+
+### 与定时器有关的方式
+
+setTimeout()    在指定的毫秒数后调用函数或计算表达式。
+
+*   参数：
+            1. js代码或者方法对象
+    2.  毫秒值
+            * 返回值：唯一标识，用于取消定时器
+        clearTimeout()  取消由 setTimeo
+           * ut() 方法设置的 timeout。
+
+```js
+setInterval()   按照指定的周期（以毫秒计）来调用函数或计算表达式。
+clearInterval() 取消由 setInterval() 设置的 timeout。
+```
+
+### 小例子
+
+实现图片连续变换功能
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+
+</head>
+<body>
+    <img id="img" src="img/banner_1.jpg" width="100%">
+
+    <script>
+        /*
+            分析：
+                1.在页面上使用img标签展示图片
+                2.定义一个方法，修改图片对象的src属性
+                3.定义一个定时器，每隔3秒调用方法一次。
+         */
+        //修改图片src属性
+        var number = 1;
+        function fun(){
+            number ++ ;
+            //判断number是否大于3
+            if(number > 3){
+                number = 1;
+            }
+            //获取img对象
+            var img = document.getElementById("img");
+            img.src = "img/banner_"+number+".jpg";
+        }
+
+        //2.定义定时器     每隔3 Seconds 调用一次fun 函数
+        setInterval(fun,3000);
+
+    </script>
+</body>
+</html>
+```
+
+![image-20200522122739253](img/444.gif)
+
+
+
+
+
+### Window Location
+
+>   *window.location* 对象可不带 window 前缀书写。
+
+**window.location 对象可用于获取当前页面地址（URL）并把浏览器重定向到新页面。**
+
+一些例子：
+
+-   window.location.href 返回当前页面的 href (URL)
+-   window.location.hostname 返回 web 主机的域名
+-   window.location.pathname 返回当前页面的路径或文件名
+-   window.location.protocol 返回使用的 web 协议（http: 或 https:）
+-   window.location.assign 加载新文档
+
+#### 一个小例子
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+
+</head>
+<body>
+<!--    定义两个按钮-->
+    <input type="button" id="btn" value="刷新">
+    <input type="button" id="gobaidu" value="访问百度">
+
+    <script>
+        //reload方法，定义一个按钮，点击按钮，刷新当前页面
+        //1.获取按钮
+        var btn = document.getElementById("btn");
+        //2.绑定单击事件
+        btn.onclick = function(){
+            //3.刷新页面
+            location.reload();
+        }
+
+        //获取href  (url)
+        var href = location.href ;
+        // alert(href);
+        //点击按钮，去访问www.itcast.cn官网
+        //1.获取按钮
+        var gobaidu = document.getElementById("gobaidu");
+        //2.绑定单击事件
+        gobaidu.onclick = function(){
+            //3.去访问百度
+            location.href = "https://www.baidu.com";
+        }
+
+    </script>
+</body>
+</html>
+```
+
+![image-20200522122739253](img/555.gif)
+
+
+
+#### 实现倒计时跳转网页
+
+```js
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span id="time">3</span>秒之后，自动跳转到首页...
+    </p>
+    <script>
+        /*
+            分析：
+               1.显示页面效果  <p>
+               2.倒计时读秒效果实现
+                   2.1 定义一个方法，获取span标签，修改span标签体内容，时间--
+                   2.2 定义一个定时器，1秒执行一次该方法
+               3.在方法中判断时间如果<= 0 ，则跳转到首页
+
+         */
+       // 2.倒计时读秒效果实现
+
+        var second = 5;
+        // 获取 id 为 time 的元素
+        var time = document.getElementById("time");
+
+        //定义一个方法，获取span标签，修改span标签体内容，时间--
+        function showTime(){
+            second -- ;
+            //判断时间如果<= 0 ，则跳转到首页
+            if(second <= 0){
+                //跳转到首页
+                location.href = "https://www.google.com";
+            }
+
+            // 修改time 对应的文本
+            time.innerHTML = second +"";
+        }
+        //设置定时器，1秒执行一次该方法
+        setInterval(showTime,1000);
+
+    </script>
+</body>
+</html>
+```
+
+![image-20200522122739253](img/666.gif)
+
+
+
+### History历史记录
+
+-   history.back() - 等同于在浏览器点击后退按钮
+
+-   history.forward() - 等同于在浏览器中点击前进按钮
+
+-   go(参数)        加载 history 列表中的某个具体页面。
+  
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History对象</title>
+</head>
+<body>
+    <input type="button" id="btn" value="获取历史记录个数">
+    <a href="09_History对象2.html">09页面</a>
+    <input type="button" id="forward" value="前进">
+<script>
+    //1.获取按钮
+    var btn = document.getElementById("btn");
+    //2.绑定单机事件
+    btn.onclick = function(){
+        //3.获取当前窗口历史记录个数
+        var length = history.length;
+        alert(length);
+    }
+    //1.获取按钮
+    var forward = document.getElementById("forward");
+    //2.绑定单机事件
+    forward.onclick = function(){
+       //前进
+       // history.forward();
+        history.go(1);
+    }
+</script>
+
+</body>
+</html>
+```
+
+
+
+
+
+### Document：文档对象
+
+​    1. 创建(获取)：在html dom模型中可以使用window对象来获取
+
+
+*   window.document
+
+*   document
+
+     方法：
+
+     1. 获取Element对象：
+         1. getElementById()    ： 根据id属性值获取元素对象。id属性值一般唯一
+         2. getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组
+         3. getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组
+         4. getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组
+     2. 创建其他DOM对象：
+         *   createAttribute(name)
+         *   createComment()
+         *   createElement()
+         *   createTextNode()
+
+     
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+    
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+
+    <div id="div3">div3</div>
+
+    <div class="cls1">div4</div>
+    <div class="cls1">div5</div>
+
+    <input type="text" name="username">
+
+<script>
+
+    //2.根据元素名称获取元素对象们。返回值是一个数组
+    var divs = document.getElementsByTagName("div");
+    //alert(divs.length);
+    //3.根据Class属性值获取元素对象们。返回值是一个数组
+    var div_cls = document.getElementsByClassName("cls1");
+   // alert(div_cls.length);
+    //4.根据name属性值获取元素对象们。返回值是一个数组
+    var ele_username = document.getElementsByName("username");
+    //alert(ele_username.length);
+    var table = document.createElement("table");
+    alert(table);
+
+</script>
+</body>
+</html>
+```
+
