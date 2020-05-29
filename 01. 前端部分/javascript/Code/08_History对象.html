@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History对象</title>
+</head>
+<body>
+    <input type="button" id="btn" value="获取历史记录个数">
+    <a href="09_History对象2.html">09页面</a>
+    <input type="button" id="forward" value="前进">
+<script>
+    /*
+        History：历史记录对象
+            1. 创建(获取)：
+                1. window.history
+                2. history
+
+            2. 方法：
+                * back()	加载 history 列表中的前一个 URL。
+                * forward()	加载 history 列表中的下一个 URL。
+                * go(参数)	    加载 history 列表中的某个具体页面。
+                    * 参数：
+                        * 正数：前进几个历史记录
+                        * 负数：后退几个历史记录
+            3. 属性：
+                * length	返回当前窗口历史列表中的 URL 数量。
+     */
+    //1.获取按钮
+    var btn = document.getElementById("btn");
+    //2.绑定单机事件
+    btn.onclick = function(){
+        //3.获取当前窗口历史记录个数
+        var length = history.length;
+        alert(length);
+    }
+    //1.获取按钮
+    var forward = document.getElementById("forward");
+    //2.绑定单机事件
+    forward.onclick = function(){
+       //前进
+       // history.forward();
+        history.go(1);
+    }
+</script>
+
+</body>
+</html>

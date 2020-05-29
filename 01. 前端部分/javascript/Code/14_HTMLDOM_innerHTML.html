@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLDOM</title>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+    
+    <script >
+        var div = document.getElementById("div1");
+        var innerHTML = div.innerHTML;
+        //alert(innerHTML);
+        //div标签中替换一个文本输入框
+       // div.innerHTML = "<input type='text'>";
+        //div标签中追加一个文本输入框
+        div.innerHTML += "<input type='text'>";
+
+
+    </script>
+</body>
+</html>

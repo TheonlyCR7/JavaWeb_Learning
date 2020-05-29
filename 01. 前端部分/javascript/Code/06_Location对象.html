@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location对象</title>
+
+</head>
+<body>
+<!--    定义两个按钮-->
+    <input type="button" id="btn" value="刷新">
+    <input type="button" id="gobaidu" value="访问百度">
+
+    <script>
+        //reload方法，定义一个按钮，点击按钮，刷新当前页面
+        //1.获取按钮
+        var btn = document.getElementById("btn");
+        //2.绑定单击事件
+        btn.onclick = function(){
+            //3.刷新页面
+            location.reload();
+        }
+
+
+        //获取href  (url)
+        var href = location.href ;
+        // alert(href);
+        //点击按钮，去访问www.itcast.cn官网
+        //1.获取按钮
+        var gobaidu = document.getElementById("gobaidu");
+        //2.绑定单击事件
+        gobaidu.onclick = function(){
+            //3.去访问百度
+            location.href = "https://www.baidu.com";
+        }
+
+    </script>
+</body>
+</html>

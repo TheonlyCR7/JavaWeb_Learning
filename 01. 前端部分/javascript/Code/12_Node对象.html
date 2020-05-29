@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node对象</title>
+    <style>
+
+        div{
+            border: 1px solid red;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+        }
+
+        #div2{
+            width: 100px;
+            height: 100px;
+        }
+
+        #div3{
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">div2</div>
+        div1
+    </div>
+<!--    javascript:void(0); 阻止跳转-->
+    <a href="javascript:void(0);" id="del">删除子节点</a>
+    <a href="javascript:void(0);" id="add">添加子节点</a>
+    <!--<input type="button" id="del" value="删除子节点">-->
+<script>
+    var i = 2;
+    var arr = new Array(10);
+    for(var j = 0; j < 10; j ++)
+        arr[j] = div[j];
+    //1.获取超链接
+    var element_a = document.getElementById("del");
+    //2.绑定单击事件
+    element_a.onclick = function(){
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div" + i);
+        div1.removeChild(div2);
+        i--;
+    }
+
+    //1.获取超链接
+    var element_add = document.getElementById("add");
+    //2.绑定单击事件
+    element_add.onclick = function(){
+        var div1 = document.getElementById("div1");
+       //给div1添加子节点
+        //创建div节点
+        var div3 = document.createElement("div" + i);
+        div3.setAttribute("id","div3");
+
+        div1.appendChild(div3);
+        i++;
+    }
+
+    /*
+        超链接功能：
+            1.可以被点击：样式
+            2.点击后跳转到href指定的url
+
+        需求：保留1功能，去掉2功能
+        实现：href="javascript:void(0);"
+     */
+
+    var div2 = document.getElementById("div2");
+    var div1 = div2.parentNode;
+    alert(div1);
+
+</script>
+</body>
+</html>
