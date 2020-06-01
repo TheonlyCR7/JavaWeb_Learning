@@ -63,20 +63,72 @@ http://别人的IP:8080
 
     *   将项目直接放到webapps文件夹中即可
 
+        ```
         /hello：项目的访问路径-->虚拟目录
-        简化部署：将项目打成一个war包，再将war包放置到webapps目录下。
-        war包会自动解压缩
+        浏览器访问
+    http://localhost:8080/hello/hello.html
+        ```
 
-    *   在配置文件中设置con/server.xml文件
-
+        也可以简化部署：将项目打成一个war包，再将war包放置到webapps目录下
+    war包会自动解压缩
+    
+        ![image-20200601151415522](img/image-20200601151415522.png)
+    
+    ![image-20200601151621637](img/image-20200601151621637.png)
+    
+    
+    
+*   在配置文件中设置con/server.xml文件
+    
         在<Host> 标签体中配置
-
+    
+        ```
         <Context docBase="D:\hello" path="/hehe" />
+        path 为虚拟路径
+        ```
+    
+        ![image-20200601152235031](img/image-20200601152235031.png)
+    
         docBase:项目存放的路径
-        path：虚拟目录
-
+        访问 `http://localhost:8080/hehe/hello.html`
+    
+        ![image-20200601152338288](img/image-20200601152338288.png)
+    
+        缺点：不安全
+    
+    
+    
     * 在conf.Catalina/localhost 创建任意名称的 xml 文件，在文件中编写
-
-        <Context docBase="D:\hello" />
-
+    
+        ```
+    <Context docBase="F:\safeware\tomcat\apache-tomcat-8.5.55\webapps\hehe" />
+        ```
+        
+        ![image-20200601154924507](img/image-20200601154924507.png)
+        
         虚拟目录：xml文件的名称
+
+### 项目形式
+
+*   静态项目
+
+*   动态项目：
+
+    目录结构：
+
+    -- 项目的根目录
+
+    ​	-- WEB-INF目录：
+
+    ​		-- web.xml: web 项目核心配置文件
+
+    ​		-- classes目录: 放置字节码文件的目录
+
+    ​		-- lib目录：放置依赖的 jar包
+
+### 将Tomcat集成到 IDEA中
+
+
+
+![image-20200531131337507](img/image-20200531131337507.png)
+
