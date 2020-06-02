@@ -79,29 +79,30 @@ http://别人的IP:8080
     
     
 *   在配置文件中设置con/server.xml文件
-    
+  
         在<Host> 标签体中配置
-    
+        
         ```
         <Context docBase="D:\hello" path="/hehe" />
         path 为虚拟路径
         ```
-    
+        
         ![image-20200601152235031](img/image-20200601152235031.png)
-    
+        
         docBase:项目存放的路径
         访问 `http://localhost:8080/hehe/hello.html`
-    
+        
         ![image-20200601152338288](img/image-20200601152338288.png)
-    
+        
         缺点：不安全
+  
     
-    
-    
+  
+  
     * 在conf.Catalina/localhost 创建任意名称的 xml 文件，在文件中编写
     
         ```
-    <Context docBase="F:\safeware\tomcat\apache-tomcat-8.5.55\webapps\hehe" />
+      <Context docBase="F:\safeware\tomcat\apache-tomcat-8.5.55\webapps\hehe" />
         ```
         
         ![image-20200601154924507](img/image-20200601154924507.png)
@@ -128,7 +129,34 @@ http://别人的IP:8080
 
 ### 将Tomcat集成到 IDEA中
 
-
+![image-20200602092349764](img/image-20200602092349764.png)
 
 ![image-20200531131337507](img/image-20200531131337507.png)
 
+
+
+部署完成后，进行index.js配置
+
+![image-20200602093034250](img/image-20200602093034250.png)
+
+
+
+启动后会自动弹出页面
+
+![image-20200602093103189](img/image-20200602093103189.png)
+
+
+
+部署新页面，hello.html
+
+![image-20200602093728895](img/image-20200602093728895.png)
+
+重启服务后，后缀加上/hello.html 即可访问
+
+![image-20200602093808541](img/image-20200602093808541.png)
+
+
+
+修改配置，当有新项目或是代码改动时，自动重启服务
+
+![image-20200602094055573](img/image-20200602094055573.png)

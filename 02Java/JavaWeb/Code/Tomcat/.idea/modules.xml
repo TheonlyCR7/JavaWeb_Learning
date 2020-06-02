@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Tomcat.iml" filepath="$PROJECT_DIR$/Tomcat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/test.iml" filepath="$PROJECT_DIR$/src/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Web/Web.iml" filepath="$PROJECT_DIR$/Web/Web.iml" />
     </modules>
   </component>
 </project>
