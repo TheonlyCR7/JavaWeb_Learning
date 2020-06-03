@@ -7,10 +7,26 @@
     <servlet>
         <servlet-name>demo1</servlet-name>
         <servlet-class>Demo.ServletDemo</servlet-class>
+<!--        指定servlet创建时机
+            -->
+        <load-on-startup>5</load-on-startup>
+<!--        值为负数，第一次被访问时创建
+            为非负数，在服务器启动时，创建-->
     </servlet>
 
     <servlet-mapping>
         <servlet-name>demo1</servlet-name>
         <url-pattern>/Demo</url-pattern>
+    </servlet-mapping>
+
+<!-- 访问Demo2-->
+    <servlet>
+        <servlet-name>demo2</servlet-name>
+        <servlet-class>Demo.ServletDemo2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>demo2</servlet-name>
+        <url-pattern>/Demo2</url-pattern>
     </servlet-mapping>
 </web-app>

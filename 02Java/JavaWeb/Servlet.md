@@ -63,3 +63,109 @@
 *   调用其方法
 
 ![image-20200602104058703](img/image-20200602104058703.png)
+
+```java
+public class ServletDemo2 implements Servlet{
+
+    // 初始化方法，创建时，执行
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+        System.out.println("初始化方法被执行");
+    }
+
+    // 获得 ServletConfig 对象
+    // Servlet 的配置对象
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+
+    // 提供服务方法  每一次servlet 被访问时，执行多次
+    @Override
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("服务方法被执行");
+    }
+
+    // 获取Servlet 的一些信息，版本等
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    // 销毁方法
+    // 在服务器正常关闭时，执行
+    @Override
+    public void destroy() {
+        System.out.println("关闭服务");
+    }
+}
+```
+
+
+
+## Servlet的生命周期
+
+*   被创建：执行一次 init方法, 说明一个Servlet 在内存中只存在一个对象，是单例的
+
+    多个用户同时访问时，可能存在线程安全问题
+
+    尽量不要在servlet 中定义成员变量，如果定义了，不要修改值
+
+    默认情况下，第一次被访问时，Servlet被创建
+
+    指定servlet创建时机
+
+    ​	值为负数，第一次被访问时创建
+
+    ​	为非负数，在服务器启动时，创建
+
+    ```xml
+            <load-on-startup>5</load-on-startup>
+    ```
+
+*   提供服务：执行servlet方法，执行多次
+
+*   被**正常销毁**：执行一次destory方法
+
+
+
+## Servlet3.0
+
+>   支持注解配置，可以不需要web.xml
+
+步骤：
+
+*   创建JavaEE项目，选择servlet版本在3以上，可以不创建 web.xml
+
+
+
+
+
+## IDEA与Tomcat的配置
+
+*   IDEA 会为每一个tomcat部署的项目单独建立一份配置文件
+*   工作空间项目
+
+
+
+## Servlet体系结构
+
+![image-20200603133402506](img/image-20200603133402506.png)
+
+GenericServlet：将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象
+将来定义Servlet类时，可以继承GenericServlet，实现service()方法即可
+
+
+
+## HTTPServlet
+
+对http协议的一种封装，简化操作
+
+*   定义类继承HttpServlet
+*   复写doGet/doPost方法
+
+
+
+## Servlet相关配置
+
+*   urlpartten: Servlet 访问路径

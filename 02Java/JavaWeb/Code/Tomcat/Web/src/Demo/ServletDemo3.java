@@ -1,13 +1,14 @@
 package Demo;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-public class ServletDemo implements Servlet {
-
+@WebServlet(urlPatterns = "/Demo")
+public class ServletDemo3 implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        System.out.println("Hello Sorvlot");
+        System.out.println("被执行");
     }
 
     @Override
@@ -15,10 +16,9 @@ public class ServletDemo implements Servlet {
         return null;
     }
 
-    // 提供服务的方法
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("Hello Sorvlot");
+
     }
 
     @Override
@@ -30,5 +30,4 @@ public class ServletDemo implements Servlet {
     public void destroy() {
 
     }
-
 }
