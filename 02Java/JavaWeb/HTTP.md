@@ -110,7 +110,7 @@ ServletRequest        --    接口
     
      - 方法：
        
-       ```
+       ```java
                1. 获取请求方式 ：GET
                    * String getMethod()  
                2. (*)获取虚拟目录：/day14
@@ -182,40 +182,40 @@ Enumeration<String> getHeaderNames():获取所有的请求头名称
 
 ### 其他功能：
 
-     1. 获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数
-       
-       ```java
-       1. String getParameter(String name):根据参数名称获取参数值    username=zs&password=123
-       2. String[] getParameterValues(String name):根据参数名称获取参数值的数组  hobby=xx&hobby=game
-       3. Enumeration<String> getParameterNames():获取所有请求的参数名称
-       4. Map<String,String[]> getParameterMap():获取所有参数的map集合
-       ```
-       
-     2. 请求转发：一种在服务器内部的资源跳转方式
 
-         步骤：
+1. 获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数
 
-        ```java
+
+```java
+   1. String getParameter(String name):根据参数名称获取参数值    username=zs&password=123
+   2. String[] getParameterValues(String name):根据参数名称获取参数值的数组  hobby=xx&hobby=game
+   3. Enumeration<String> getParameterNames():获取所有请求的参数名称
+   4. Map<String,String[]> getParameterMap():获取所有参数的map集合
+
+```
+
+2. 请求转发：一种在服务器内部的资源跳转方式
+  
+    步骤：
+
+```java
         1. 通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)
         2. 使用RequestDispatcher对象来进行转发：forward(ServletRequest request, ServletResponse response) 
-        ```
+```
 
-        关于中文乱码的问题
+关于中文乱码的问题
 
-        ```java
+```java
         get方式：tomcat 8 已经将get方式乱码问题解决了
         post方式：会乱码
         解决：在获取参数前，设置request的编码request.setCharacterEncoding("utf-8");
-        ```
+```
 
-     3. 请求转发，资源跳转的方式
+3. 请求转发，资源跳转的方式
+  
+  步骤：
 
-        步骤：
-
-        ```java
+```java
         1. 通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)
         2. 使用RequestDispatcher对象来进行转发：forward(ServletRequest request, ServletResponse response) 
-        ```
-
-        
-
+```
