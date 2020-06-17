@@ -1,5 +1,4 @@
 Tomcat
-======
 
 1.什么是Tomcat
 --------------
@@ -1502,7 +1501,7 @@ height="5.472222222222222in"}
 
 
 ​    
-    request.getRequestDispatcher("/Foot").include(request, response);
+​    request.getRequestDispatcher("/Foot").include(request, response);
 
 访问一下Servlet111,成功把网头和网尾包含了
 
@@ -1880,9 +1879,9 @@ height="3.5833333333333335in"}
 
 ​    
 ​    
-    //获取网页上所有的Cookie
-    Cookie[] cookies = request.getCookies();
-    
+​    //获取网页上所有的Cookie
+​    Cookie[] cookies = request.getCookies();
+​    
     //判断Cookie的值是否为空
     String cookieValue = null;
     for (int i = 0; cookies != null && i < cookies.length; i++) {
@@ -1968,15 +1967,15 @@ height="2.1530435258092737in"}
 
 
 ​    
-    //简化开发复杂度，book的id和商品的id相同
-    static {
-      linkedHashMap.put("1", new Book("1", "javaweb", "zhong"));
-      linkedHashMap.put("2", new Book("2", "java", "fu"));
-      linkedHashMap.put("3", new Book("3", "oracle", "cheng"));
-      linkedHashMap.put("4", new Book("4", "mysql", "ou"));
-      linkedHashMap.put("5", new Book("5", "ajax", "zi"));
-    }
-    
+​    //简化开发复杂度，book的id和商品的id相同
+​    static {
+​      linkedHashMap.put("1", new Book("1", "javaweb", "zhong"));
+​      linkedHashMap.put("2", new Book("2", "java", "fu"));
+​      linkedHashMap.put("3", new Book("3", "oracle", "cheng"));
+​      linkedHashMap.put("4", new Book("4", "mysql", "ou"));
+​      linkedHashMap.put("5", new Book("5", "ajax", "zi"));
+​    }
+​    
     //获取到所有书籍
     public static LinkedHashMap getAll() {
       return linkedHashMap;
@@ -2768,9 +2767,9 @@ height="3.892075678040245in"}
 
 
 ​    
-        private TokenProcessor() {
-        }
-    
+​        private TokenProcessor() {
+​        }
+​    
         private final static TokenProcessor TOKEN_PROCESSOR = new TokenProcessor();
     
         public static TokenProcessor getInstance() {
@@ -2779,13 +2778,13 @@ height="3.892075678040245in"}
 
 
 ​    
-        public static String makeToken() {
+​        public static String makeToken() {
 
 
 ​    
-            //这个随机生成出来的Token的长度是不确定的
-            String token = String.valueOf(System.currentTimeMillis() + new Random().nextInt(99999999));
-    
+​            //这个随机生成出来的Token的长度是不确定的
+​            String token = String.valueOf(System.currentTimeMillis() + new Random().nextInt(99999999));
+​    
             try {
                 //我们想要随机数的长度一致，就要获取到数据指纹
                 MessageDigest messageDigest = MessageDigest.getInstance("md5");
@@ -2934,7 +2933,7 @@ height="3.5833333333333335in"}
 
 
 ​    
-    }
+​    }
 
 jsp显示页面
 

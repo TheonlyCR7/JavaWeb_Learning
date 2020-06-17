@@ -26,6 +26,11 @@ public class ServletDemo8 extends HttpServlet {
 //            System.out.println(hobby);
 //        }
 
+        //获取到存进request对象的值
+        String userName = (String) request.getAttribute("username");
+        //在浏览器输出该值
+        response.getWriter().write("i am :"+userName);
+
         //获取所有请求的参数名称
         Enumeration<String> parameterNames = request.getParameterNames();
 /*        while(parameterNames.hasMoreElements()){

@@ -76,21 +76,23 @@ http://别人的IP:8080
 
 * 在配置文件中设置con/server.xml文件
   
-      在<Host> 标签体中配置
-      
-      ```
-      <Context docBase="D:\hello" path="/hehe" />
-      path 为虚拟路径
-      ```
-      
-      ![image-20200601152235031](img/image-20200601152235031.png)
-      
-      docBase:项目存放的路径
-      访问 `http://localhost:8080/hehe/hello.html`
-      
-      ![image-20200601152338288](img/image-20200601152338288.png)
-      
-      缺点：不安全
+  ~~~XML
+  在<Host> 标签体中配置
+  
+  ```
+  <Context docBase="D:\hello" path="/hehe" />
+  path 为虚拟路径
+  ```
+  
+  ![image-20200601152235031](img/image-20200601152235031.png)
+  
+  docBase:项目存放的路径
+  访问 `http://localhost:8080/hehe/hello.html`
+  
+  ![image-20200601152338288](img/image-20200601152338288.png)
+  
+  缺点：不安全
+  ~~~
   
   * 在conf.Catalina/localhost 创建任意名称的 xml 文件，在文件中编写
     
