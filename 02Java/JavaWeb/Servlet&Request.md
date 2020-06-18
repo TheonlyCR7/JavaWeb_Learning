@@ -1,9 +1,7 @@
-Tomcat
-
 1.什么是Tomcat
 --------------
 
-Tomcat简单的说就是一个运行JAVA的网络服务器，底层是Socket的一个程序，它也是JSP和Serlvet的一个容器。
+Tomcat简单的说就是一个运行JAVA的网络服务器，底层是Socket的一个程序，它也是JSP和Serlvet的一个容器
 
 2.为什么我们需要用到Tomcat
 --------------------------
@@ -21,12 +19,11 @@ Tomcat简单的说就是一个运行JAVA的网络服务器，底层是Socket的�
 
 进入Tomcat目录下的bin中启动startup.bat，以下是成功启动Tomcat的页面。
 
-![](media/rId29.png){width="5.833333333333333in"
-height="3.8170844269466317in"}
+
 
 在浏览器地址栏输入http://localhost:8080,如果能够出现Tomcat页面，说明配置成功了。
 
-**注意：**如果在使用Tomcat时出现了`Error deploying web application directory web222`,很大原因就是jdk和tomcat的版本不匹配。
+**注意：**如果在使用Tomcat时出现了`Error deploying web application directory web222`,很大原因就是jdk和tomcat的版本不匹配
 
 目前，**jdk8不能匹配tomcat7.0**，所以**要降低jdk版本**【换成JDK7】
 
@@ -42,19 +39,17 @@ height="3.8170844269466317in"}
    - 第二种方法：主动改变tomcat的端口,
      **到tomcat主目录下的conf/server.xml文件中修改**,把8080端口改成是8088或者是其他的
 
-![](media/rId30.png){width="5.833333333333333in"
-height="2.1695898950131234in"}
+
 
 4.相关术语介绍
 --------------
 
-![](media/rId32.png){width="5.4375in" height="3.3020833333333335in"}
+![image-20200618143503090](img/image-20200618143503090.png)
 
 5.tomcat结构目录
 ----------------
 
-![](media/rId34.png){width="5.833333333333333in"
-height="3.108974190726159in"}
+
 
 ### 5.1目录的简单介绍
 
@@ -444,8 +439,7 @@ height="3.5416666666666665in"}
 4.JAVAWEB目录结构
 -----------------
 
-![](media/rId39.png){width="5.833333333333333in"
-height="3.9560826771653543in"}
+![Snipaste_2020-06-16_22-19-53](img/Snipaste_2020-06-16_22-19-53.jpg)
 
 以上图说明：
 
@@ -470,55 +464,26 @@ height="3.9560826771653543in"}
 
 创建一个自定义类，**实现Servlet接口**
 
-![](media/rId90.png){width="5.833333333333333in"
-height="3.1597222222222223in"}
 
-我们发现有5个方法需要重写，有init【初始化】，destroy【销毁】,service【服务】,ServletConfig【Servlet配置】,getServletInfo【Servlet信息】。
+
+有5个方法需要重写，有init【初始化】，destroy【销毁】,service【服务】,ServletConfig【Servlet配置】,getServletInfo【Servlet信息】。
 
 在此一看，发现service()方法是最有可能是写逻辑代码的地方。
 
-首先写一个hellword入门先，调用ServletResponse对象的方法向浏览器输出HelloWorld
 
-![](media/rId91.png){width="5.833333333333333in"
-height="0.6417804024496938in"}
-
-配置xml文件，光写了Servlet是不行的，Tomcat还要知道浏览器怎么访问这个Servlet。
-
-![](media/rId92.png){width="5.833333333333333in"
-height="2.6519127296587928in"}
-
-访问自己写的Servlet程序
-
-![](media/rId93.png){width="5.833333333333333in"
-height="1.741897419072616in"}
-
-![](media/rId94.gif){width="3.3333333333333335in"
-height="3.3333333333333335in"}
 
 6.Servlet生命周期
 -----------------
 
-下面我们看看Servlet的生命周期\
-![](media/rId96.png "fig:"){width="5.833333333333333in"
-height="3.1597222222222223in"}
-
-**第一次访问**Servlet，我们发现**init()和service()都被调用了**
-
-![](media/rId97.png){width="5.555555555555555in"
-height="4.166666666666667in"}
+**第一次访问**Servlet，init()和service()都被调用**
 
 **第二次访问**Servlet，**service()被调用了**
 
-![](media/rId98.png){width="4.166666666666667in" height="3.125in"}
-
 第三次访问Servlet，**还是service()被调用了**
-
-![](media/rId98.png){width="4.166666666666667in" height="3.125in"}
 
 当我们**关闭Tomcat服务器**的时候，**destroy()被调用了！**
 
-![](media/rId99.png){width="5.555555555555555in"
-height="4.166666666666667in"}
+
 
 ### 6.1Servlet生命周期可分为5个步骤
 
@@ -536,8 +501,7 @@ height="4.166666666666667in"}
 简单总结：**只要访问Servlet，service()就会被调用。init()只有第一次访问Servlet的时候才会被调用。**\
 **destroy()只有在Tomcat关闭的时候才会被调用。**
 
-![](media/rId101.gif){width="3.3333333333333335in"
-height="3.3333333333333335in"}
+
 
 7.继承HttpServlet编写Servlet程序
 --------------------------------
@@ -546,11 +510,7 @@ height="3.3333333333333335in"}
 
 - 一般我们开发的时候，都是**重写doGet()和doPost()方法的**。对于idea而言，创建Servlet的时候已经帮你重写好了
 
-![](media/rId103.png){width="5.833333333333333in"
-height="2.174944225721785in"}
 
-![](media/rId22.jpg){width="3.5833333333333335in"
-height="3.5833333333333335in"}
 
 ServletConfig、ServletContext和Servlet细节
 ==========================================
@@ -560,8 +520,7 @@ ServletConfig、ServletContext和Servlet细节
 
 前面我们已经学过了Servlet的生命周期了，我们根据Servlet的生命周期画出Servlet的调用图加深理解
 
-![](media/rId106.png){width="5.833333333333333in"
-height="3.511715879265092in"}
+![image-20200618111451017](img/image-20200618111451017.png)
 
 2.Servlet的细节
 ---------------
@@ -570,26 +529,24 @@ height="3.511715879265092in"}
 
 **同一个Servlet可以被映射到多个URL上。**
 
-    <servlet>
-      <servlet-name>Demo1</servlet-name>
-      <servlet-class>zhongfucheng.web.Demo1</servlet-class>
-    </servlet>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>/Demo1</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>/ouzicheng</url-pattern>
-    </servlet-mapping>
+```xml
+<servlet>
+  <servlet-name>Demo1</servlet-name>
+  <servlet-class>zhongfucheng.web.Demo1</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>/Demo1</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>/ouzicheng</url-pattern>
+</servlet-mapping>
+```
 
-无论我访问的是http://localhost:8080/Demo1还是http://localhost:8080/ouzicheng。我访问的都是Demo1。
+无论我访问的是http://localhost:8080/Demo1还是http://localhost:8080/ouzicheng。我访问的都是Demo1
 
-![](media/rId109.png){width="5.833333333333333in"
-height="2.3770483377077865in"}
 
-![](media/rId110.png){width="5.833333333333333in"
-height="2.3770483377077865in"}
 
 ### 2.2 Servlet映射的URL可以使用通配符
 
@@ -625,29 +582,30 @@ Servlet映射的URL可以使用通配符和Servlet可以被映射到多个URL上
 <!-- -->
 ```
 
-    <servlet>
-      <servlet-name>Demo1</servlet-name>
-      <servlet-class>zhongfucheng.web.Demo1</servlet-class>
-    </servlet>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>*.jsp</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>*.net</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>*.asp</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-      <servlet-name>Demo1</servlet-name>
-      <url-pattern>*.php</url-pattern>
-    </servlet-mapping>
+```xml
+<servlet>
+  <servlet-name>Demo1</servlet-name>
+  <servlet-class>zhongfucheng.web.Demo1</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>*.jsp</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>*.net</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>*.asp</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+  <servlet-name>Demo1</servlet-name>
+  <url-pattern>*.php</url-pattern>
+</servlet-mapping>
+```
 
-![](media/rId114.gif){width="3.3333333333333335in"
-height="3.3333333333333335in"}
+
 
 ### 2.3 Servlet是单例的
 
@@ -675,11 +633,7 @@ height="3.3333333333333335in"}
 
 如果在`<servlet>`元素中配置了一个`<load-on-startup>`元素，那么**WEB应用程序在启动时**，就会**装载并创建Servlet的实例对象**、以及**调用Servlet实例对象的init()方法**。
 
-![](media/rId120.png){width="5.833333333333333in"
-height="1.7493339895013122in"}
 
-![](media/rId121.png){width="5.833333333333333in"
-height="3.1597222222222223in"}
 
 作用：
 
@@ -1245,9 +1199,11 @@ height="1.8557917760279965in"}
 ![](media/rId181.png){width="5.833333333333333in"
 height="1.5537871828521435in"}
 
-来这里我们来分析一下乱码的原因，在前面的博客中我已经介绍了，Tomcat服务器默认编码是ISO
-8859-1，而**浏览器使用的是UTF-8编码**。浏览器的中文数据提交给服务器，**Tomcat以ISO
-8859-1编码对中文编码，当我在Servlet读取数据的时候，拿到的当然是乱码。**而我设置request的编码为UTF-8，乱码就解决了。
+
+
+来这里我们来分析一下乱码的原因，在前面的博客中我已经介绍了，Tomcat服务器默认编码是ISO 8859-1，而**浏览器使用的是UTF-8编码**。浏览器的中文数据提交给服务器，**Tomcat以ISO8859-1编码对中文编码，当我在Servlet读取数据的时候，拿到的当然是乱码。**而我设置request的编码为UTF-8，乱码就解决了。
+
+
 
 接下来使用get方式传递中文数据，**把表单的方式改成get即可**，当我们访问的时候，又出现乱码了！
 
@@ -1882,10 +1838,10 @@ height="3.5833333333333335in"}
 ​    //获取网页上所有的Cookie
 ​    Cookie[] cookies = request.getCookies();
 ​    
-    //判断Cookie的值是否为空
-    String cookieValue = null;
-    for (int i = 0; cookies != null && i < cookies.length; i++) {
-    
+​    //判断Cookie的值是否为空
+​    String cookieValue = null;
+​    for (int i = 0; cookies != null && i < cookies.length; i++) {
+​    
       //获取到以time为名的Cookie
       if (cookies[i].getName().equals("time")) {
         printWriter.write("您上次登陆的时间是：");
@@ -1976,10 +1932,10 @@ height="2.1530435258092737in"}
 ​      linkedHashMap.put("5", new Book("5", "ajax", "zi"));
 ​    }
 ​    
-    //获取到所有书籍
-    public static LinkedHashMap getAll() {
-      return linkedHashMap;
-    }
+​    //获取到所有书籍
+​    public static LinkedHashMap getAll() {
+​      return linkedHashMap;
+​    }
 
 **显示网页上所有的书籍【首页】**
 
@@ -2770,8 +2726,8 @@ height="3.892075678040245in"}
 ​        private TokenProcessor() {
 ​        }
 ​    
-        private final static TokenProcessor TOKEN_PROCESSOR = new TokenProcessor();
-    
+​        private final static TokenProcessor TOKEN_PROCESSOR = new TokenProcessor();
+​    
         public static TokenProcessor getInstance() {
             return TOKEN_PROCESSOR;
         }
@@ -2785,11 +2741,11 @@ height="3.892075678040245in"}
 ​            //这个随机生成出来的Token的长度是不确定的
 ​            String token = String.valueOf(System.currentTimeMillis() + new Random().nextInt(99999999));
 ​    
-            try {
-                //我们想要随机数的长度一致，就要获取到数据指纹
-                MessageDigest messageDigest = MessageDigest.getInstance("md5");
-                byte[] md5 = messageDigest.digest(token.getBytes());
-    
+​            try {
+​                //我们想要随机数的长度一致，就要获取到数据指纹
+​                MessageDigest messageDigest = MessageDigest.getInstance("md5");
+​                byte[] md5 = messageDigest.digest(token.getBytes());
+​    
                 //如果我们直接 return  new String(md5)出去，得到的随机数会乱码。
                 //因为随机数是任意的01010101010，在转换成字符串的时候，会查gb2312的码表，gb2312码表不一定支持该二进制数据，得到的就是乱码
     

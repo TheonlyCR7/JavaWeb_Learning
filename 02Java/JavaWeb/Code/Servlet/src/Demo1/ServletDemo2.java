@@ -1,5 +1,6 @@
 package Demo1;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +18,12 @@ public class ServletDemo2 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("dopost");
+        // 获取ServletConfig 对象
+        ServletConfig servletConfig = this.getServletConfig();
+
+        // 根据配置名字获取值
+        String value = servletConfig.getInitParameter("name");
+
+        System.out.println(value);
     }
 }
