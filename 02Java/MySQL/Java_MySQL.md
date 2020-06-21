@@ -4,7 +4,7 @@
 >
 >   定义了操作所有关系型数据库的规则(接口)
 
-![image-20200517094833949](../MySQL/img/image-20200517094833949.png)
+![image-20200517094833949](img/image-20200517094833949.png)
 
 
 
@@ -17,7 +17,7 @@
 1.  导入驱动jar包
   在项目目录下创建文件夹 lib 将下来的jar包复制粘贴到里面，将lib文件夹右键 `add to library`
 
-  ![image-20200517180043524](../MySQL/img/image-20200517180043524.png)
+  ![image-20200517180043524](img/image-20200517180043524.png)
 
 2.  编写代码，注册驱动
 
@@ -102,7 +102,7 @@ static Connection getConnection(String url, String user, String password)
 	 若是连接本机数据库  ip地址:端口号 可以不写
 ```
 
-![image-20200517195308168](../MySQL/img/image-20200517195308168.png)
+![image-20200517195308168](img/image-20200517195308168.png)
 
 ## Connection对象
 
@@ -155,7 +155,7 @@ String nickname = rs.getString("nickname");
 String sex = rs.getString(4);   // 获取所在行第4列的String型数据
 ```
 
-![image-20200517212355377](../MySQL/img/image-20200517212355377.png)
+![image-20200517212355377](img/image-20200517212355377.png)
 
 
 
@@ -218,7 +218,7 @@ while(rs.next()) {
     driver = com.mysql.cj.jdbc.Driver
     ```
 
-    ![image-20200518121957364](../MySQL/img/image-20200518121957364.png)
+    ![image-20200518121957364](img/image-20200518121957364.png)
 
     此时只需要读取文件即可
 
@@ -381,13 +381,13 @@ public class JDBCDemo3 {
 
 **数据库 emp表格students**
 
-![image-20200519115520468](../MySQL/img/image-20200519115520468.png)
+![image-20200519115520468](img/image-20200519115520468.png)
 
 执行结果：
 
-![image-20200519115554037](../MySQL/img/image-20200519115554037.png)
+![image-20200519115554037](img/image-20200519115554037.png)
 
-![image-20200519115634285](../MySQL/img/image-20200519115634285.png)
+![image-20200519115634285](img/image-20200519115634285.png)
 
 
 
@@ -485,7 +485,7 @@ public class JDBCDemo3 {
 
 默认配置
 
-![image-20200519163504176](../MySQL/img/image-20200519163504176.png)
+![image-20200519163504176](img/image-20200519163504176.png)
 
 传入参数使用其他配置
 
@@ -493,7 +493,7 @@ public class JDBCDemo3 {
 DataSource dataSource = new ComboPooledDataSource("otherc3p0");
 ```
 
-![image-20200519163620668](../MySQL/img/image-20200519163620668.png)
+![image-20200519163620668](img/image-20200519163620668.png)
 
 
 
@@ -513,7 +513,7 @@ public class C3P0Demo2 {
 }
 ```
 
-![image-20200519162540988](../MySQL/img/image-20200519162540988.png)
+![image-20200519162540988](img/image-20200519162540988.png)
 
 当连接数超过10时，会等待3 秒 报错
 
@@ -541,7 +541,7 @@ public class C3P0Demo2 {
 }
 ```
 
-![image-20200519163941129](../MySQL/img/image-20200519163941129.png)
+![image-20200519163941129](img/image-20200519163941129.png)
 
 
 
