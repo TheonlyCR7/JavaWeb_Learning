@@ -13,4 +13,71 @@
         <location>/error.jsp</location>
     </error-page>
 
+<!--    &lt;!&ndash; 自己配置描述文件，需要多少个描述文件就配置多少 &ndash;&gt;-->
+<jsp-config>
+<!--    &lt;!&ndash; 配置c描述文件-对应c标签，这里的taglib-uri对应jsp中引入的uri &ndash;&gt;-->
+    <taglib>
+        <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+        <taglib-location>/WEB-INF/c.tld</taglib-location>
+    </taglib>
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/fn.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/c-1_0.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/c-1_0-rt.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/fmt.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/fmt-1_0.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/fmt-1_0-rt.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/permittedTaglibs.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/scriptfree.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/sql.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/sql-1_0.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/sql-1_0-rt.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/x.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/x-1_0.tld</taglib-location>-->
+<!--    </taglib>-->
+<!--    <taglib>-->
+<!--        <taglib-uri>http://www.codecoord.com/fn</taglib-uri>-->
+<!--        <taglib-location>/WEB-INF/x-1_0-rt.tld</taglib-location>-->
+<!--    </taglib>-->
+
+
+</jsp-config>
+
 </web-app>
