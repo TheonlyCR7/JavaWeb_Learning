@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义js框架</title>
+    <!--    这里要使用相对路径-->
+    <script src="../js/own_frame.js"></script>
+</head>
+<body>
+
+    <div id="div1">div1...</div>
+    <div id="div2">div2...</div>
+
+    <script>
+        var div1 = get("div1");
+        var div2 = get("div2");
+        // 获取标签体内容
+        alert(div1.innerHTML);
+        alert(div2.innerHTML);
+
+    </script>
+
+</body>
+</html>
