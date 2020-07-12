@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON数据格式</title>
+    <script>
+        // 定义基本格式
+        var person = {"name":"张三", age:23, gender:true};
+        alert(person);
+
+        // 获取值
+        var name = person.name;
+        var age = person["age"];
+
+
+
+        // 嵌套格式   {} --> []
+        var persons = {
+            "presons":[
+                {name:bob, age:23, gender: true},
+                {name:lily, age:21, gender: false},
+                {name:tom, age:20, gender: true}
+                ]
+        };
+        var name1 = persons.persons[2].name;
+        alert(persons);
+
+        // 嵌套格式2   [] --> {}
+        var persons1 = [
+            {name:bob, age:23, gender: true},
+            {name:lily, age:21, gender: false},
+            {name:tom, age:20, gender: true}
+        ]
+        for(var i = 0; i < persons1.length; i++){
+            var p = person1[i];
+            for(var key in p){
+                alert(key + ":" + p[key]);
+            }
+        }
+
+        alert(person1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
