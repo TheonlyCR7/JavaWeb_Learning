@@ -20,20 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a2fab6-de79-46d7-a5f8-32bbb8b7e626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../AJAX/src/AJAX/Servletajax1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/01原生js实现ajax.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/02JQuery实现方法1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/03JQuery实现方式2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/04JQuery实现方式3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/js/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AJAX/web/js/jquery-migrate-1.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Demo1/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Demo1/test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/01JSON数据格式.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-annotations-2.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-core-2.2.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Demo1/test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Demo1/test3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Demo1/test4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Demo1/test5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSONProject/web/WEB-INF/lib/jackson-annotations-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSONProject/web/WEB-INF/lib/jackson-core-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSONProject/web/WEB-INF/lib/jackson-databind-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSONProject/web/regist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../10.JSON.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../10.JSON.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Demo1/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo1/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Demo1/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo1/test1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,98 @@
       <recent name="D:\Github_NOTES\JavaWeb_Learning\02Java\JavaWeb\Code\JSON\web\lib" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.test5.test5">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test2.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Demo1" />
+      <option name="MAIN_CLASS_NAME" value="Demo1.test2" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Demo1" />
+      <option name="MAIN_CLASS_NAME" value="Demo1.test3" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test3.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Demo1" />
+      <option name="MAIN_CLASS_NAME" value="Demo1.test3" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test4.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Demo1" />
+      <option name="MAIN_CLASS_NAME" value="Demo1.test4" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test5.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Demo1" />
+      <option name="MAIN_CLASS_NAME" value="Demo1.test5" />
+      <option name="METHOD_NAME" value="test5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.55" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.55" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="JSON:war exploded">
@@ -108,6 +197,15 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.test5.test5" />
+        <item itemvalue="JUnit.test4.test2" />
+        <item itemvalue="JUnit.test3" />
+        <item itemvalue="JUnit.test3.test2" />
+        <item itemvalue="JUnit.test2.test2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -120,7 +218,8 @@
       <option name="presentableId" value="Default" />
       <updated>1594519338806</updated>
       <workItem from="1594519340445" duration="4928000" />
-      <workItem from="1594543351332" duration="2254000" />
+      <workItem from="1594543351332" duration="10972000" />
+      <workItem from="1594638718418" duration="82000" />
     </task>
     <servers />
   </component>
@@ -140,17 +239,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1594523983372">
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1594629829462">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1594523983372" />
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1594629829462" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1594638365178">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1594638365178" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1594638365177">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1594638365177" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1594638365177">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1594638365177" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1594638365178">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1594638365178" />
     <state x="485" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1594543620138">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="485" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.864@0.0.1536.864" timestamp="1594543620138" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1594543690667">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1594636495949">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1594543690667" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1594636495949" />
   </component>
 </project>
