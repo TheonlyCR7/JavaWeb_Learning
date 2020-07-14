@@ -17,7 +17,7 @@ public class ServletFindUser extends HttpServlet {
         // 获取用户名
         String username = request.getParameter("username");
         // 设置编码
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("application/json;charset=utf-8");
         Map<String, Object> map = new HashMap<>();
 
         // 查询数据库 调用service层判断用户名是否存在
