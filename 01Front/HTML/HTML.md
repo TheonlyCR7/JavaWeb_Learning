@@ -301,8 +301,7 @@ name 属性规定锚（anchor）的名称
 
 
 
-
-##HTML图像
+## HTML图像
 
 
 >   **gif 和 jpg 文件均可用作 HTML 背景**
