@@ -58,7 +58,7 @@
 
 #### 队列
 
-* **队列**：**queue**,简称队，它同堆栈一样，也是一种运算受限的线性表，其限制是仅允许在表的一端进行插入，而在表的另一端进行删除。
+* **队列**：**queue**,简称队，它同堆栈一样，也是一种运算受限的线性表，其限制是仅允许在表的一端进行插入，而在表的另一端进行删除
 
 简单的说，采用该结构的集合，对元素的存取有如下的特点：
 
@@ -119,7 +119,7 @@
 
 ![](img\二叉树.bmp)
 
-我们要说的是二叉树的一种比较有意思的叫做**红黑树**，红黑树本身就是一颗二叉查找树，将节点插入后，该树仍然是一颗二叉查找树。也就意味着，树的键值仍然是有序的。
+我们要说的是二叉树的一种比较有意思的叫做**红黑树**，红黑树本身就是一颗二叉查找树，将节点插入后，该树仍然是一颗二叉查找树。也就意味着，树的键值仍然是有序的
 
 红黑树的约束:
 
@@ -145,7 +145,7 @@
 
 ## 1.1 List接口介绍
 
-`java.util.List`接口继承自`Collection`接口，是单列集合的一个重要分支，习惯性地会将实现了`List`接口的对象称为List集合。在List集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过索引来访问集合中的指定元素。另外，List集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致。
+`java.util.List`接口继承自`Collection`接口，是单列集合的一个重要分支，习惯性地会将实现了`List`接口的对象称为List集合。在List集合中允许出现重复的元素，所有的元素是以一种线性方式进行存储的，在程序中可以通过索引来访问集合中的指定元素。另外，List集合还有一个特点就是元素有序，即元素的存入顺序和取出顺序一致
 
 看完API，我们总结一下：
 
@@ -221,13 +221,13 @@ public class ListDemo {
 
 ## 3.2 LinkedList集合
 
-`java.util.LinkedList`集合数据存储的结构是链表结构。方便元素添加、删除的集合。
+`java.util.LinkedList`集合数据存储的结构是链表结构。方便元素添加、删除的集合
 
 > LinkedList是一个双向链表，那么双向链表是什么样子的呢，我们用个图了解下
 
 ![](img\双向链表.png)
 
-实际开发中对一个集合元素的添加与删除经常涉及到首尾操作，而LinkedList提供了大量首尾操作的方法。这些方法我们作为了解即可：
+实际开发中对一个集合元素的添加与删除经常涉及到**首尾操作**，而LinkedList提供了大量首尾操作的方法。这些方法我们作为了解即可：
 
 * `public void addFirst(E e)`:将指定元素插入此列表的开头。
 * `public void addLast(E e)`:将指定元素添加到此列表的结尾。
@@ -270,7 +270,7 @@ public class LinkedListDemo {
 
 # 第四章 Set接口
 
-`java.util.Set`接口和`java.util.List`接口一样，同样继承自`Collection`接口，它与`Collection`接口中的方法基本一致，并没有对`Collection`接口进行功能上的扩充，只是比`Collection`接口更加严格了。与`List`接口不同的是，`Set`接口中元素无序，并且都会以某种规则保证存入的元素不出现重复。
+`java.util.Set`接口和`java.util.List`接口一样，同样继承自`Collection`接口，它与`Collection`接口中的方法基本一致，并没有对`Collection`接口进行功能上的扩充，只是比`Collection`接口更加严格了。与`List`接口不同的是，`Set`接口中**元素无序**，并且都会以某种规则保证存入的元素**不出现重复。**
 
 `Set`集合有多个子类，这里我们介绍其中的`java.util.HashSet`、`java.util.LinkedHashSet`这两个集合。
 
@@ -280,7 +280,7 @@ public class LinkedListDemo {
 
 `java.util.HashSet`是`Set`接口的一个实现类，它所存储的元素是不可重复的，并且元素都是无序的(即存取顺序不一致)。`java.util.HashSet`底层的实现其实是一个`java.util.HashMap`支持，由于我们暂时还未学习，先做了解。
 
-`HashSet`是根据对象的哈希值来确定元素在集合中的存储位置，因此具有良好的存取和查找性能。保证元素唯一性的方式依赖于：`hashCode`与`equals`方法。
+`HashSet`是**根据对象的哈希值来确定元素在集合中的存储位置**，因此具有良好的**存取和查找性能**。保证元素唯一性的方式依赖于：`hashCode`与`equals`方法。
 
 我们先来使用一下Set集合存储，看下现象，再进行原理的讲解:
 
@@ -535,15 +535,15 @@ public class CollectionsDemo {
 
 代码演示之后 ，发现我们的集合按照顺序进行了排列，可是这样的顺序是采用默认的顺序，如果想要指定顺序那该怎么办呢？
 
-我们发现还有个方法没有讲，`public static <T> void sort(List<T> list，Comparator<? super T> )`:将集合中元素按照指定规则排序。接下来讲解一下指定规则的排列。
+我们发现还有个方法没有讲，`public static <T> void sort(List<T> list，Comparator<? super T> )`:将集合中元素按照指定规则排序。接下来讲解一下指定规则的排列
 
 ## 2.2 Comparator比较器
 
 我们还是先研究这个方法
 
-`public static <T> void sort(List<T> list)`:将集合中元素按照默认规则排序。
+`public static <T> void sort(List<T> list)`:将集合中元素按照默认规则排序
 
-不过这次存储的是字符串类型。
+不过这次存储的是字符串类型
 
 ```java
 public class CollectionsDemo2 {
