@@ -12,7 +12,7 @@
 
 ## 1.1 什么是IO
 
-生活中，你肯定经历过这样的场景。当你编辑一个文本文件，忘记了`ctrl+s` ，可能文件就白白编辑了。当你电脑上插入一个U盘，可以把一个视频，拷贝到你的电脑硬盘里。那么数据都是在哪些设备上的呢？键盘、内存、硬盘、外接设备等等。
+生活中，你肯定经历过这样的场景。当你编辑一个文本文件，忘记了`ctrl+s` ，可能文件就白白编辑了。当你电脑上插入一个U盘，可以把一个视频，拷贝到你的电脑硬盘里。那么数据都是在哪些设备上的呢？键盘、内存、硬盘、外接设备等等
 
 我们把这种数据的传输，可以看做是一种数据的流动，按照流动的方向，以内存为基准，分为`输入input` 和`输出output` ，即**流向内存是输入流，流出内存的输出流**。
 
@@ -22,10 +22,10 @@ Java中I/O操作主要是指使用`java.io`包下的内容，进行输入、输�
 
 根据数据的流向分为：**输入流**和**输出流**。相对内存而言
 
-* **输入流** ：把数据从`其他设备`上读取到`内存`中的流。 
-* **输出流** ：把数据从`内存` 中写出到`其他设备`上的流。
+* **输入流** ：把数据从`其他设备`上读取到`内存`中的流
+* **输出流** ：把数据从`内存` 中写出到`其他设备`上的流
 
-格局数据的类型分为：**字节流**和**字符流**。
+格局数据的类型分为：**字节流**和**字符流**
 
 * **字节流** ：以字节为单位，读写数据的流
 * **字符流** ：以字符为单位，读写数据的流
@@ -225,9 +225,9 @@ e
 
 `java.io.InputStream `抽象类是表示字节输入流的所有类的超类，可以读取字节信息到内存中。它定义了字节输入流的基本共性功能方法。
 
-- `public void close()` ：关闭此输入流并释放与此流相关联的任何系统资源。    
-- `public abstract int read()`： 从输入流读取数据的下一个字节。 
-- `public int read(byte[] b)`： 从输入流中读取一些字节数，并将它们存储到字节数组 b中 。
+- `public void close()` ：关闭此输入流并释放与此流相关联的任何系统资源
+- `public abstract int read()`： 从输入流读取数据的下一个字节
+- `public int read(byte[] b)`： 从输入流中读取一些字节数，并将它们存储到字节数组 b中 
 
 > 小贴士：
 >
@@ -239,10 +239,10 @@ e
 
 ### 构造方法
 
-* `FileInputStream(File file)`： 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的 File对象 file命名。 
-* `FileInputStream(String name)`： 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的路径名 name命名。  
+* `FileInputStream(File file)`： 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的 File对象 file命名
+* `FileInputStream(String name)`： 通过打开与实际文件的连接来创建一个 FileInputStream ，该文件由文件系统中的路径名 name命名
 
-当你创建一个流对象时，必须传入一个文件路径。该路径下，如果没有该文件,会抛出`FileNotFoundException` 。
+当你创建一个流对象时，必须传入一个文件路径。该路径下，如果没有该文件,会抛出`FileNotFoundException` 
 
 - 构造举例，代码如下：
 
@@ -435,7 +435,7 @@ public class Copy {
 
 - `public void close()` ：关闭此流并释放与此流相关联的任何系统资源 
 - `public int read()`： 从输入流读取一个字符
-- `public int read(char[] cbuf)`： 从输入流中读取一些字符，并将它们存储到字符数组 cbuf中 
+- `public int read(char[] cbuf)`： 从输入流中读取一些字符，并将它们存储到字符数组 中 
 
 ## 3.2 FileReader类  
 
@@ -559,7 +559,7 @@ public class FISRead {
 - `void write(int c)` 写入单个字符。
 - `void write(char[] cbuf) `写入字符数组。 
 - `abstract  void write(char[] cbuf, int off, int len) `写入字符数组的某一部分,off数组的开始索引,len写的字符个数。 
-- `void write(String str) `写入字符串。 
+- `void write(String str) `写入字符串。
 - `void write(String str, int off, int len)` 写入字符串的某一部分,off字符串的开始索引,len写的字符个数。
 - `void flush() `刷新该流的缓冲。  
 - `void close()` 关闭此流，但要先刷新它。 
@@ -851,7 +851,7 @@ public class TryDemo {
 
 ### 构造方法
 
-- `public Properties()` :创建一个空的属性列表。
+- `public Properties()` :创建一个空的属性列表
 
 ### 基本的存储方法
 

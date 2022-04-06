@@ -11,7 +11,7 @@
 
 ## 1.1 概述
 
-`java.io.File` 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作。
+`java.io.File` 类是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找和删除等操作
 
 ## 1.2 构造方法
 
@@ -69,7 +69,7 @@ File file4 = new File(parentDir, child);
           System.out.println("文件构造路径:"+f.getPath());
           System.out.println("文件名称:"+f.getName());
           System.out.println("文件长度:"+f.length()+"字节");
-
+  
           File f2 = new File("d:/aaa");     
           System.out.println("目录绝对路径:"+f2.getAbsolutePath());
           System.out.println("目录构造路径:"+f2.getPath());
@@ -82,7 +82,7 @@ File file4 = new File(parentDir, child);
   文件构造路径:d:\aaa\bbb.java
   文件名称:bbb.java
   文件长度:636字节
-
+  
   目录绝对路径:d:\aaa
   目录构造路径:d:\aaa
   目录名称:aaa
@@ -147,7 +147,7 @@ d:\aaa 目录?:true
 - `public boolean createNewFile()` ：当且仅当具有该名称的文件尚不存在时，创建一个新的空文件
 - `public boolean delete()` ：删除由此File表示的文件或目录
 - `public boolean mkdir()` ：创建由此File表示的目录。
-- `public boolean mkdirs()` ：创建由此File表示的目录，包括任何必需但不存在的父目录。
+- `public boolean mkdirs()` ：创建由此File表示的目录，包括任何必需但不存在的父目录
 
 方法演示，代码如下：
 
@@ -196,7 +196,7 @@ public class FileFor {
     public static void main(String[] args) {
         File dir = new File("d:\\java_code");
       
-      	//获取当前目录下的文件以及文件夹的名称。
+      	//获取当前目录下的文件以及文件夹的名称
 		String[] names = dir.list();
 		for(String name : names){
 			System.out.println(name);
@@ -275,7 +275,7 @@ public class Demo01DiGui {
 
 ### 计算1 ~ n的和
 
-**分析**：num的累和 = num + (num-1)的累和，所以可以把累和的操作定义成一个方法，递归调用。
+**分析**：num的累和 = num + (num-1)的累和，所以可以把累和的操作定义成一个方法，递归调用
 
 **实现代码**：
 
@@ -320,13 +320,13 @@ public class DiGuiDemo {
 
 ## 2.3 递归求阶乘
 
-* **阶乘**：所有小于及等于该数的正整数的积。
+* **阶乘**：所有小于及等于该数的正整数的积
 
 ```java
 n的阶乘：n! = n * (n-1) *...* 3 * 2 * 1 
 ```
 
-**分析**：这与累和类似,只不过换成了乘法运算，学员可以自己练习，需要注意阶乘值符合int类型的范围。
+**分析**：这与累和类似,只不过换成了乘法运算，学员可以自己练习，需要注意阶乘值符合int类型的范围
 
 ```
 推理得出：n! = n * (n-1)!
@@ -365,7 +365,7 @@ public class DiGuiDemo {
 
 ## 2.4 递归打印多级目录
 
-**分析**：多级目录的打印，就是当目录的嵌套。遍历之前，无从知道到底有多少级目录，所以我们还是要使用递归实现。
+**分析**：多级目录的打印，就是当目录的嵌套。遍历之前，无从知道到底有多少级目录，所以我们还是要使用递归实现
 
 **代码实现**：
 
@@ -447,17 +447,19 @@ public class DiGuiDemo3 {
 
 ## 3.2 文件过滤器优化
 
-`java.io.FileFilter`是一个接口，是File的过滤器。 该接口的对象可以传递给File类的`listFiles(FileFilter)` 作为参数， 接口中只有一个方法。
+`java.io.FileFilter`是一个接口，是File的过滤器。 该接口的对象可以传递给File类的`listFiles(FileFilter)` 作为参数， 接口中只有一个方法
 
-`boolean accept(File pathname)  ` ：测试pathname是否应该包含在当前File目录中，符合则返回true。
+`boolean accept(File pathname)  ` ：测试pathname是否应该包含在当前File目录中，符合则返回true
 
 **分析**：
 
-1. 接口作为参数，需要传递子类对象，重写其中方法。我们选择匿名内部类方式，比较简单。
+1. 接口作为参数，需要传递子类对象，重写其中方法。我们选择匿名内部类方式，比较简单
 2. `accept`方法，参数为File，表示当前File下所有的子文件和子目录。保留住则返回true，过滤掉则返回false。保留规则：
-   1. 要么是.java文件。
-   2. 要么是目录，用于继续遍历。
-3. 通过过滤器的作用，`listFiles(FileFilter)`返回的数组元素中，子文件对象都是符合条件的，可以直接打印。
+   1. 要么是.java文件
+   2. 要么是目录，用于继续遍历
+3. 通过过滤器的作用，`listFiles(FileFilter)`返回的数组元素中，子文件对象都是符合条件的，可以直接打印
+
+
 
 **代码实现：**
 

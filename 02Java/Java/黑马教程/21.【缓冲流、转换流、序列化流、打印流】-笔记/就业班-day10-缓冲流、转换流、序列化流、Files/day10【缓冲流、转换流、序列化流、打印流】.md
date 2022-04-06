@@ -214,9 +214,9 @@ public class BufferedWriterDemo throws IOException {
 
 ### 案例分析
 
-1. 逐行读取文本信息。
-2. 解析文本信息到集合中。
-3. 遍历集合，按顺序，写出文本信息。
+1. 逐行读取文本信息
+2. 解析文本信息到集合中
+3. 遍历集合，按顺序，写出文本信息
 
 ### 案例实现
 
@@ -279,7 +279,7 @@ public class BufferedTest {
 
 * **字符集 `Charset`**：也叫编码表。是一个系统支持的所有字符的集合，包括各国家文字、标点符号、图形符号、数字等。
 
-计算机要准确的存储和识别各种字符集符号，需要进行字符编码，一套字符集必然至少有一套字符编码。常见字符集有ASCII字符集、GBK字符集、Unicode字符集等。![](img/1_charset.jpg)
+计算机要准确的存储和识别各种字符集符号，需要进行字符编码，一套字符集必然至少有一套字符编码。常见字符集有ASCII字符集、GBK字符集、Unicode字符集等p;;![](img/1_charset.jpg)
 
 可见，当指定了**编码**，它所对应的**字符集**自然就指定了，所以**编码**才是我们最终要关心的。
 
@@ -324,9 +324,9 @@ public class ReaderDemo {
 
 那么如何读取GBK编码的文件呢？ 
 
-## 2.3 InputStreamReader类  
+## 2.3 `InputStreamReader`类  
 
-转换流`java.io.InputStreamReader`，是Reader的子类，是从字节流到字符流的桥梁。它读取字节，并使用指定的字符集将其解码为字符。它的字符集可以由名称指定，也可以接受平台的默认字符集。 
+转换流`java.io.InputStreamReader`，是Reader的子类，**是从字节流到字符流的桥梁**。它读取字节，并使用指定的字符集将其解码为字符。它的字符集可以由名称指定，也可以接受平台的默认字符集。 
 
 ### 构造方法
 
@@ -370,7 +370,7 @@ public class ReaderDemo2 {
 
 ## 2.4 OutputStreamWriter类
 
-转换流`java.io.OutputStreamWriter` ，是Writer的子类，是从字符流到字节流的桥梁。使用指定的字符集将字符编码为字节。它的字符集可以由名称指定，也可以接受平台的默认字符集。 
+转换流`java.io.OutputStreamWriter` ，是Writer的子类，是从字符流到字节流的桥梁。使用指定的字符集将字符编码为字节。它的字符集可以由名称指定，也可以接受平台的默认字符集
 
 ### 构造方法
 
