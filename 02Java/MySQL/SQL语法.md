@@ -1,39 +1,6 @@
-# MySQL
-
-## 配置
-
-MySQL服务启动
-
--   管理员模式打开cmd 
-
--   ```cmd
-    mysql -uroot -p
-    ```
-
-    ![image-20200517092709159](img/image-20200517092709159.png)
-
-MySQL登录, 退出
-
--   mysql -uroot -proot
--   exit   quit 
-
-MySQL目录结构
-
--   数据库：文件夹
--   表：文件
--   数据：文件中存储的字节
-
-```SQL
-SELECT  [ALL|DISTINCT]  <列名> as <别称>  [,<表名> as <别称> ].... FROM <表名> as <别称> [,<表名> as <别称> ].... 
-where <条件>  
-GROUP BY  <列名> 
-HAVING  <条件> 
-ORDER BY <列名>  [ASC|DESC]
-```
 
 
-
-## SQL
+# SQL
 
 >   Structured Query Language  结构化查询语言
 >
@@ -41,7 +8,7 @@ ORDER BY <列名>  [ASC|DESC]
 >
 >   存在一定的版本之间的差异
 
-### SQL通用语法
+## 1.1 SQL概述
 
 -   SQL 语句以单行，多行书写，以分号结尾
 -   不区分大小写 关键字建议大写
@@ -64,7 +31,7 @@ ORDER BY <列名>  [ASC|DESC]
 
 
 
-## 在您的网站中使用 SQL
+## 1.2 在您的网站中使用 SQL
 
 要创建发布数据库中数据的网站，您需要以下要素：
 
@@ -72,8 +39,6 @@ ORDER BY <列名>  [ASC|DESC]
 -   服务器端脚本语言（比如 PHP 或 ASP）
 -   SQL
 -   HTML / CSS
-
-
 
 >   您需要在数据库上执行的大部分工作都由 SQL 语句完成
 >
@@ -88,7 +53,44 @@ SELECT LastName FROM Persons
 
 
 
-### DML	DDL
+## 1.3 关于Mysql
+
+### 1.3.1 介绍
+
+关系型数据库管理系统，SQL是语言，mysql是管理系统
+
+MySQL服务启动
+
+- 管理员模式打开cmd 
+
+- ```cmd
+  mysql -uroot -p
+  ```
+
+  ![image-20200517092709159](img/image-20200517092709159.png)
+
+MySQL登录, 退出
+
+-   mysql -uroot -proot
+-   exit   quit 
+
+MySQL目录结构
+
+-   数据库：文件夹
+-   表：文件
+-   数据：文件中存储的字节
+
+```SQL
+SELECT  [ALL|DISTINCT]  <列名> as <别称>  [,<表名> as <别称> ].... FROM <表名> as <别称> [,<表名> as <别称> ].... 
+where <条件>  
+GROUP BY  <列名> 
+HAVING  <条件> 
+ORDER BY <列名>  [ASC|DESC]
+```
+
+
+
+## 2.1 DML	DDL
 
 >   **把 SQL 分为两个部分：数据操作语言 (DML) 和 数据定义语言 (DDL)**
 >
@@ -111,7 +113,7 @@ SELECT LastName FROM Persons
 
 
 
-## SQL 中最重要的 DDL 语句: 
+## 2.2 SQL 中最重要的 DDL 语句: 
 
 ```SQL
 CREATE DATABASE - 创建新数据库
@@ -135,7 +137,7 @@ DROP INDEX - 删除索引
 
 
 
-## **SELECT 和 SELECT \* 语句**
+## 2.3 **SELECT 和 SELECT \* 语句**
 
 >   SELECT 语句用于从表中选取数据，结果被存储在一个结果表中（称为结果集）
 
@@ -149,11 +151,11 @@ SELECT * FROM 表名称
 SELECT LastName,FirstName FROM Persons
 ```
 
-![image-20200317144301062](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317144301062.png)
 
 
 
-从 "Persons" 表中选取所有的列。
+
+* 从 "Persons" 表中选取所有的列。
 
 请使用符号 * 取代列的名称，就像这样：
 
@@ -164,13 +166,13 @@ SELECT * FROM Persons
 
 
 
-### 在结果集（result-set）中导航
+* 在结果集（result-set）中导航
 
 **由 SQL 查询程序获得的结果被存放在一个结果集中**。大多数数据库软件系统都允许使用编程函数在结果集中进行导航，比如：Move-To-First-Record、Get-Record-Content、Move-To-Next-Record 等等。
 
 
 
-## **SQL SELECT DISTINCT 语句**
+## 2.4 **SQL SELECT DISTINCT 语句**
 
 ```sql
 关键词 DISTINCT 用于返回唯一不同的值  
@@ -180,13 +182,11 @@ SELECT DISTINCT 列名称 FROM 表名称
 SELECT Company FROM Orders
 ```
 
-![image-20200317144755054](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317144755054.png)
-
-![image-20200317144830975](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317144830975.png)
 
 
 
-## **SQL WHERE 子句**
+
+## 2.5 **SQL WHERE 子句**
 
 >   **WHERE 子句用于规定选择的标准**
 
@@ -196,9 +196,7 @@ SELECT Company FROM Orders
 SELECT 列名称 FROM 表名称 WHERE 列 运算符 值;
 ```
 
-![image-20200317150600867](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317150600867.png)
 
-### 使用 WHERE 子句
 
 如果只希望选取居住在城市 "Beijing" 中的人，我们需要向 SELECT 语句添加 WHERE 子句：
 
@@ -206,7 +204,7 @@ SELECT 列名称 FROM 表名称 WHERE 列 运算符 值;
 SELECT * FROM Persons WHERE City='Beijing'
 ```
 
-![image-20200317150749028](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317150749028.png)
+
 
 
 
@@ -236,13 +234,13 @@ SELECT * FROM Persons WHERE Year>'1965'
 
 
 
-## **SQL AND & OR 运算符**
+## **2.6 SQL AND & OR 运算符**
 
 >   **AND 和 OR 运算符用于基于一个以上的条件对记录进行过滤**
 
 与语言中的 and or  用法相同
 
-![image-20200317151030226](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317151030226.png)
+
 
 使用 AND 来显示所有姓为 "Carter" 并且名为 "Thomas" 的人：
 
@@ -250,13 +248,7 @@ SELECT * FROM Persons WHERE Year>'1965'
 SELECT * FROM Persons WHERE FirstName='Thomas' AND LastName='Carter'
 ```
 
-![image-20200317151126020](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317151126020.png)
 
-**or同理**
-
-
-
-#### 结合 AND 和 OR 运算符
 
 我们也可以把 AND 和 OR 结合起来（使用圆括号来组成复杂的表达式）:
 
@@ -265,17 +257,17 @@ SELECT * FROM Persons WHERE (FirstName='Thomas' OR FirstName='William')
 AND LastName='Carter'
 ```
 
-![image-20200317151311398](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317151311398.png)
 
 
 
-## **SQL ORDER BY 子句**
+
+## 2.7 **SQL ORDER BY 子句**
 
 >   **ORDER BY 语句用于对结果集进行排序**
 >
 >   默认为升序，使用DESC关键字改为降序
 
-![image-20200317151614219](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317151614219.png)
+
 
 以字母顺序显示公司名称：
 
@@ -285,7 +277,7 @@ AND LastName='Carter'
 SELECT Company, OrderNumber FROM Orders ORDER BY Company
 ```
 
-![image-20200317151839899](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317151839899.png)
+
 
 
 
@@ -295,7 +287,7 @@ SELECT Company, OrderNumber FROM Orders ORDER BY Company
 SELECT Company, OrderNumber FROM Orders ORDER BY Company, OrderNumber
 ```
 
-![image-20200317152014228](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200317152014228.png)
+
 
 
 
@@ -309,7 +301,7 @@ SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC
 
 
 
-## **SQL INSERT INTO 语句**
+## 2.8 **SQL INSERT INTO 语句**
 
 >   INSERT INTO 语句用于向表格中插入新的行
 
@@ -378,7 +370,7 @@ INSERT INTO Persons (LastName, Address) VALUES ('Wilson', 'Champs-Elysees')
 
 
 
-## **SQL UPDATE 语句**
+## **2.9 SQL UPDATE 语句**
 
 >   Update 语句用于修改表中的数据
 
@@ -433,7 +425,7 @@ UPDATE Person SET Address = 'Zhongshan 23', City = 'Nanjing' WHERE LastName = 'W
 
 
 
-## **SQL DELETE 语句**
+## 2.10 **SQL DELETE 语句**
 
 >   DELETE 语句用于删除表中的行
 
@@ -476,7 +468,7 @@ DELETE FROM table_name
 
 或者：
 
-### 建表语句
+## 2.11 建表语句
 
 ```SQL
 CREATE TABLE 'STUDENT'(
@@ -487,7 +479,7 @@ CREATE TABLE 'STUDENT'(
 --PRIMARY KEY  必须有元素为关键  此元素不可重复
 ```
 
-#### 常见类型
+## 2.12 数据常见类型
 
 ```sql
 int, char, varchar, datetime
@@ -497,7 +489,7 @@ int, char, varchar, datetime
 --datetime 日期，时间
 ```
 
-### 插入语句
+## 2.13 插入语句
 
 ```sql
 INSERT INTO '表名' VALUE(2,'张三');
@@ -514,7 +506,7 @@ INSERT INTO '表名' VALUE
 ;
 ```
 
-### 查询语句
+## 2.14 查询语句
 
 ```sql
 --按条件查询
@@ -534,7 +526,7 @@ SELECT ID, NAMEE FROM schooldog WHERE ID > 0 ORDER BY ID LIMIT x, y;
 
 
 
-## 数据库的备份
+## 3.1 数据库的备份
 
 1.  命令行的方式
 
@@ -542,13 +534,13 @@ SELECT ID, NAMEE FROM schooldog WHERE ID > 0 ORDER BY ID LIMIT x, y;
 mysqldump -u用户名 -p密码 > 保存路径
 ```
 
-![image-20200517091758564](img/image-20200517091758564.png)
+![image-20200517091758564](https://s2.loli.net/2023/08/12/ucpLxBeZVjTkWAn.png)
 
 若无密码 则为空
 
 在指定位置生成
 
-![image-20200517091905933](img/image-20200517091905933.png)
+![image-20200517091905933](https://s2.loli.net/2023/08/12/AW9i8x25de31NlJ.png)
 
 
 
@@ -558,11 +550,11 @@ mysqldump -u用户名 -p密码 > 保存路径
 mysqldump -uroot -p 数据库名称 > 指定位置
 ```
 
-![image-20200517092146249](img/image-20200517092146249.png)
+![image-20200517092146249](https://s2.loli.net/2023/08/12/Mg8C3FHfOe5p6AY.png)
 
 a.sql文件内容
 
-![image-20200517092228635](img/image-20200517092228635.png)
+![image-20200517092228635](https://s2.loli.net/2023/08/12/wj79WDMApqmJf6u.png)
 
 
 
@@ -580,13 +572,13 @@ a.sql文件内容
 drop database school;
 ```
 
-![image-20200517093203075](img/image-20200517093203075.png)
+![image-20200517093203075](https://s2.loli.net/2023/08/12/TuJPfG9kibyeD2t.png)
 
 ```sql
 show databases;
 ```
 
-![image-20200517093259469](img/image-20200517093259469.png)
+![image-20200517093259469](https://s2.loli.net/2023/08/12/HKysxZOBhSIQ6FG.png)
 
 
 
@@ -601,17 +593,9 @@ source d://a.sql;
 show tables;
 ```
 
-![image-20200517093647393](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200517093647393.png)
-
-![image-20200517093711266](img/image-20200517093711266.png)
 
 
-
-
-
-
-
-
+![image-20200517093711266](https://s2.loli.net/2023/08/12/GWUrJoLa3gKmytq.png)
 
 
 
